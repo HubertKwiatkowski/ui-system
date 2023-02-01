@@ -14,13 +14,15 @@ export default {
   },
 } as Meta;
 
-export const Primary: Story = (args) => (
+export const MultiButton: Story = (args) => (
   <Button {...args} onClick={() => {}}>
     Click me!
   </Button>
 );
 
-Primary.args = {
-  disabled: false,
+MultiButton.args = {
   variant: "primary",
+  disabled: false,
+  isLoading: false,
+  icon: false,
 };
