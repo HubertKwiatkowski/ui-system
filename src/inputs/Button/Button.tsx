@@ -10,14 +10,14 @@ interface ButtonProps {
   type?: "button" | "submit";
   disabled?: boolean;
   isLoading?: boolean;
-  icon?: any;
+  icon?: h.JSX.Element;
 }
 
 export const Button = ({
   variant = "primary",
   disabled = false,
   isLoading = false,
-  icon = false,
+  // icon = "none",
   ...props
 }: PropsWithChildren<ButtonProps>) => {
   const variantClass =
@@ -30,6 +30,13 @@ export const Button = ({
         : styles.disabledSecondary;
     }
   };
+
+  // const icon = (): string => {
+  //   return isLoading
+  //     ? "spinner"
+  //     : "plus"
+  //   }
+  // };
 
   const getIsLoadingClassForSpecificVariant = (): string => {
     if (isLoading) {
@@ -56,9 +63,6 @@ export const Button = ({
   //   return isLoading && !disabled ? styles.iconSpinner : styles.iconPlus
   // }
 
-  // const iconType = 
-  //   isLoading && !disabled ? Spinner : Plus;
-
   // const getButtonVariant = (): string => {
   //   if (!disabled) {
   //     return variant === "primary"
@@ -74,15 +78,16 @@ export const Button = ({
   //   getButtonVariant(),
   // ].join(" ")
 
+
   return (
     <button
       type="button"
       onClick={props.onClick}
       disabled={disabled}
-      // variant={"primary"}
+      variant={"primary"}
       className={dynamicClasses}
     >
-
+      {props.icon}
       {props.children}
     </button>
   );

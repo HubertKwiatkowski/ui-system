@@ -2,6 +2,8 @@
 import { Meta, Story } from "@storybook/preact";
 import { h } from "preact";
 import { Button } from "./Button";
+import { Plus } from "../../icons/Plus";
+import { Spinner } from "../../icons/Spinner";
 import * as React from "preact/compat";
 
 export default {
@@ -15,13 +17,24 @@ export default {
       options: ["button", "submit"],
       control: { type: "select" },
     },
+    icon: {
+      options: ["none", "plus", "spinner"],
+      mapping: {
+        none: <></>,
+        plus: <Plus />,
+        spinner: <Spinner />,
+      },
+      control: { type: "select" },
+    },
   },
 } as Meta;
 
 export const MultiButton: Story = (args) => (
-  <Button {...args} onClick={() => {}}>
-    Click me!
-  </Button>
+  <>
+    <Button icon={<></>} {...args} onClick={() => {}}>
+      Click me!
+    </Button>
+  </>
 );
 
 MultiButton.args = {
@@ -29,5 +42,5 @@ MultiButton.args = {
   type: "button",
   disabled: false,
   isLoading: false,
-  icon: false,
+  icon: "none",
 };

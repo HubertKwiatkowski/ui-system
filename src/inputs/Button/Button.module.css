@@ -29,52 +29,6 @@
 }
 
 
-
-.iconTemplate {
-    height: 12px;
-    width: 12px;
-    margin-right: 11px;
-}
-
-.iconPrimary {
-    filter: invert(0%) sepia(79%) saturate(0%) hue-rotate(152deg) brightness(89%) contrast(100%);
-}
-
-.iconSecondary {
-    filter: invert(64%) sepia(48%) saturate(347%) hue-rotate(188deg) brightness(94%) contrast(97%);
-}
-
-.template:hover .iconPrimary, 
-.template:hover .iconSecondary {
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
-}
-
-.iconDisabled {
-    filter: invert(7%) sepia(10%) saturate(624%) hue-rotate(214deg) brightness(100%) contrast(92%);
-}
-
-.iconSpinner {
-    filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(18deg) brightness(107%) contrast(96%);
-    animation: loading-spinner 1.5s linear infinite
-}
-
-@keyframes loading-spinner {
-    from {
-        transform: rotate(0deg)
-    }
-    to {
-        transform: rotate(360deg)
-    }
-}
-
-.iconShow {
-    display: block
-}
-
-.iconHide {
-    display: none
-}
-
 .primary:hover {
     background: #B23386;
     border: 1px solid #000000;
@@ -136,8 +90,6 @@
     color: #1C1B1F;
 }
 
-
-
 .disabledPrimary, 
 .disabledPrimary:hover, 
 .disabledPrimary:active {
@@ -151,3 +103,24 @@
     background: #fff;
     border: 1px solid #E6E1E5;
 }
+
+/* icon styling */
+
+svg {
+    height: 12px;
+    width: 12px;
+    margin-right: 11px;
+}
+/* 
+.spinner {
+    animation: loading-spinner 1.5s linear infinite
+}
+
+@keyframes loading-spinner {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+} */
