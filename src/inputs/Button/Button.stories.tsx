@@ -11,6 +11,10 @@ export default {
       options: ["primary", "secondary"],
       control: { type: "select" },
     },
+    type: {
+      options: ["button", "submit"],
+      control: { type: "select" },
+    },
   },
 } as Meta;
 
@@ -22,6 +26,7 @@ export const MultiButton: Story = (args) => (
 
 MultiButton.args = {
   variant: "primary",
+  type: "button",
   disabled: false,
   isLoading: false,
   icon: false,

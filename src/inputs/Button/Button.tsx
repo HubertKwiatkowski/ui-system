@@ -2,15 +2,15 @@ import { PropsWithChildren } from "preact/compat";
 import { h } from "preact";
 
 import * as styles from "./Button.module.css";
-import { Plus, Spinner } from "../../assets"
 
 
 interface ButtonProps {
   onClick(): void;
   variant?: "primary" | "secondary";
+  type?: "button" | "submit";
   disabled?: boolean;
   isLoading?: boolean;
-  icon?: boolean;
+  icon?: any;
 }
 
 export const Button = ({
@@ -48,46 +48,41 @@ export const Button = ({
 
   // cons for icon
 
-  const getIconClassForSpecificVariant = ():string => {
-    return icon === true
-      ? styles.iconShow
-      : styles.iconHide
-  };
+  // const getIconClassForSpecificVariant = ():string => {
+  //   return icon ? styles.iconShow : styles.iconHide
+  // };
 
-  const getIfIsSpinner = ():string => {
-    return isLoading && !disabled === true
-      ? styles.iconSpinner
-      : styles.iconPlus
-  }
+  // const getIfIsSpinner = ():string => {
+  //   return isLoading && !disabled ? styles.iconSpinner : styles.iconPlus
+  // }
 
-  const iconType = 
-    isLoading && !disabled === true ? Spinner : Plus;
+  // const iconType = 
+  //   isLoading && !disabled ? Spinner : Plus;
 
-  const getButtonVariant = (): string => {
-    if (!disabled) {
-      return variant === "primary"
-        ? styles.iconPrimary
-        : styles.iconSecondary;
-    }
-  };
+  // const getButtonVariant = (): string => {
+  //   if (!disabled) {
+  //     return variant === "primary"
+  //       ? styles.iconPrimary
+  //       : styles.iconSecondary;
+  //   }
+  // };
 
-  const iconClasses = [
-    styles.iconTemplate,
-    getIconClassForSpecificVariant(),
-    getIfIsSpinner(),
-    getButtonVariant(),
-  ].join(" ")
+  // const iconClasses = [
+  //   styles.iconTemplate,
+  //   getIconClassForSpecificVariant(),
+  //   getIfIsSpinner(),
+  //   getButtonVariant(),
+  // ].join(" ")
 
   return (
     <button
       type="button"
       onClick={props.onClick}
       disabled={disabled}
-      variant={"primary"}
+      // variant={"primary"}
       className={dynamicClasses}
     >
-      <object type="image/svg+xml" data={ iconType } className={iconClasses}>
-      </object>
+
       {props.children}
     </button>
   );
