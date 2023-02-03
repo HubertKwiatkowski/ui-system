@@ -4,22 +4,48 @@ import { h } from "preact";
 import * as styles from "./Checkbox.module.css";
 
 interface CheckboxProps {
-  onClick(): void;
+  onChange(): void;
+  id: string;
+  name: string;
+  value: string;
+  label: string;
+  checked?: boolean;
   disabled?: boolean;
 }
 
 export const Checkbox = ({
+  checked = false,
   disabled = false,
+  id = "id",
+  name = "name",
+  value = "value",
+  label = "label",
   ...props
 }: PropsWithChildren<CheckboxProps>) => {
+
+  const getIfDisabled = (): string => {
+    return disabled
+      ? styles.disabled
+      : "";
+  };  
+  
+  const classes = [
+    styles.checkboxLabel,
+    getIfDisabled()
+  ].join(" ");
+
   return (
-    <div
-      onClick={props.onClick}
-      disabled={disabled}
-      variant={"primary"}
-    >
-      <input type="checkbox" />
-      <label htmlFor="checkboxLabel">{props.children}</label>
-    </div>
+    <label className={classes}>
+      <input 
+        type="checkbox" 
+        disabled={disabled}
+        onChange={props.onChange}
+        checked={checked}
+        id={id}
+        name={name}
+        value={value}
+      />
+      {label}
+    </label>
   )
 }

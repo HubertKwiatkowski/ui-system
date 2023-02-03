@@ -11,11 +11,16 @@ export default {
 } as Meta;
 
 export const CheckboxField: Story = (args) => (
-  <Checkbox {...args} onClick={() => {}}>
-    Checkbox label
+  <Checkbox {...args} onChange={() => {}}>
+    Checkbox label goes here
   </Checkbox>
 );
 
 CheckboxField.args = {
+  checked: false,
   disabled: false,
+  id: "ID",
+  name: "Name",
+  value: "Value",
+  label: "Checkbox label",
 }
