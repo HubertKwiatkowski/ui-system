@@ -1,3 +1,4 @@
+// Checkbox.stories.tsx
 import { Meta, Story } from "@storybook/preact";
 import { h } from "preact";
 import { Checkbox } from "./Checkbox";
