@@ -30,9 +30,11 @@ export default {
 } as Meta;
 
 export const MultiButton: Story = (args) => (
-  <Button icon={<></>} {...args} onClick={() => {}}>
-    Click me!
-  </Button>
+  <>
+    <Button icon={<></>} {...args} onClick={() => {}}>
+      Click me!
+    </Button>
+  </>
 );
 
 MultiButton.args = {

@@ -17,6 +17,7 @@ export const Button = ({
   variant = "primary",
   disabled = false,
   isLoading = false,
+  // icon = "none",
   ...props
 }: PropsWithChildren<ButtonProps>) => {
   const variantClass =
@@ -30,6 +31,12 @@ export const Button = ({
     }
   };
 
+  // const icon = (): string => {
+  //   return isLoading
+  //     ? "spinner"
+  //     : "plus"
+  //   }
+  // };
 
   const getIsLoadingClassForSpecificVariant = (): string => {
     if (isLoading) {
@@ -45,6 +52,32 @@ export const Button = ({
     getDisabledClassForSpecificVariant(),
     getIsLoadingClassForSpecificVariant(),
   ].join(" ");
+
+  // cons for icon
+
+  // const getIconClassForSpecificVariant = ():string => {
+  //   return icon ? styles.iconShow : styles.iconHide
+  // };
+
+  // const getIfIsSpinner = ():string => {
+  //   return isLoading && !disabled ? styles.iconSpinner : styles.iconPlus
+  // }
+
+  // const getButtonVariant = (): string => {
+  //   if (!disabled) {
+  //     return variant === "primary"
+  //       ? styles.iconPrimary
+  //       : styles.iconSecondary;
+  //   }
+  // };
+
+  // const iconClasses = [
+  //   styles.iconTemplate,
+  //   getIconClassForSpecificVariant(),
+  //   getIfIsSpinner(),
+  //   getButtonVariant(),
+  // ].join(" ")
+
 
   return (
     <button
