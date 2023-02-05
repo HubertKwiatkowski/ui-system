@@ -2,8 +2,7 @@
 import { Meta, Story } from "@storybook/preact";
 import { h } from "preact";
 import { Button } from "./Button";
-import { Plus } from "../../icons/Plus";
-import { Spinner } from "../../icons/Spinner";
+import { Plus, Spinner } from '../../icons'
 import * as React from "preact/compat";
 
 export default {
@@ -30,11 +29,9 @@ export default {
 } as Meta;
 
 export const MultiButton: Story = (args) => (
-  <>
-    <Button icon={<></>} {...args} onClick={() => {}}>
-      Click me!
-    </Button>
-  </>
+  <Button icon={<></>} {...args} onClick={() => {}}>
+    Click me!
+  </Button>
 );
 
 MultiButton.args = {
