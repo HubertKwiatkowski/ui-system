@@ -15,7 +15,7 @@ export const Switch = ({
   checked = false,
   disabled = false,
   id = "id",
-}: PropsWitchChildren<SwitchProps>) => {
+}: PropsWithChildren<SwitchProps>) => {
 
   const getIfDisabledLabel = (): string => {
     return disabled
