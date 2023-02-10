@@ -6,9 +6,10 @@ import * as styles from "./Link.module.css";
 interface LinkProps {
   to: string;
   id: string;
-  target?: '_blank' | '_self'| '_parent' | '_top';
+  target?: "_blank" | "_self" | "_parent" | "_top";
   disabled?: boolean;
   onClick(): void;
+  icon?: h.JSX.Element;
 }
 
 export const Link = ({
@@ -19,9 +20,22 @@ export const Link = ({
   ...props
 }: PropsWithChildren<LinkProps>) => {
 
+
+  const dynamicClasses = [
+    styles.template
+  ]
+
   return (
-    <div>
-      dadum
-    </div>
+    <a 
+      href={props.to}
+      id="id"
+      target="_blank"
+      disabled={disabled}
+      onClick={props.onClick}
+      className={dynamicClasses}
+    >
+      {props.icon}
+      {props.children}
+    </a>      
   )
 }
