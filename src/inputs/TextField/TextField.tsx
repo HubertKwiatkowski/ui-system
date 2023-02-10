@@ -15,32 +15,44 @@ interface TextFieldProps {
   hint?: string;
   id: string;
   onChange(): void;
-  animated?: boolean
+  moving?: boolean;
 }
 
 export const TextField = (props: TextFieldProps) => {
 
   const [ focused, setFocus ] = useState(false)
 
-  const labelActiveClass = 
-    !!props.value || props.placeholder || focused
-      ? styles.inputLabelActive
-      : styles.inputLabelInactive
+  const labelTop = styles.inputLabelTop
+  const labelInside = styles.inputLabelInside
+
+  const labelClass = 
+    props.moving
+      ? (!!props.value || props.placeholder || focused
+        ? labelTop
+        : labelInside)
+      : labelTop
 
   const errorInputClass = !!props.error ? styles.inputError : ""
 
+  const focuseLabel = focused ? styles.focusedLabel : ""
+  const focuseWrapper = focused ? styles.focusedWrapper : ""
+
   const labelDynamicClasses = [
     styles.baseLabel,
-    labelActiveClass,
+    labelClass,
+    focuseLabel
   ].join(" ")
 
   const inputDynamicClasses = [
     styles.inputWrapper,
     errorInputClass,
+    focuseWrapper
   ].join(" ")
 
   return (
-    <div className={inputDynamicClasses}>
+    <div 
+      className={inputDynamicClasses}
+    >
       {props.label && (
         <label 
           className={labelDynamicClasses}
@@ -59,6 +71,7 @@ export const TextField = (props: TextFieldProps) => {
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
         className={inputDynamicClasses}
+        moving={props.moving}
       />
       {props.error && <span className={styles.error}>{props.error}</span>}
       {props.hint && !props.error && (

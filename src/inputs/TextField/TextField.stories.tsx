@@ -23,10 +23,11 @@ MultiTextField.args = {
   id: "id",
   name: "name",
   disabled: false,
-  placeholder: "",
+  placeholder: "placeholder",
   value: "",
   type: "text",
   label: "Input Label",
   error: "",
   hint: "",
+  moving: false,
 }
