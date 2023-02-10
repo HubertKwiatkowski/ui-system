@@ -1,3 +1,38 @@
-.template {
-  color: red
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+.inputWrapper {
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+.baseLabel {
+  display: block;
+  transition-duration: 0.3s;
+}
+
+.inputWrapper input {
+  display: block;
+  padding: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  min-width: 210px;
+  color: #000;
+}
+
+.inputLabelActive {
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  font-size: 12px;
+  background: white;
+  padding-inline: 4px;
+  z-index: 2;
+}
+
+.inputLabelInactive {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
 }

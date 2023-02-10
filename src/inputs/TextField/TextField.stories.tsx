@@ -5,15 +5,28 @@ import { TextField } from "./TextField";
 
 export default {
   component: TextField,
-  argTypes: {},
+  argTypes: {
+    type: {
+      options: ["text", "password"],
+      control: { type: "select" },
+    },
+  },
 } as Meta;
 
 export const MultiTextField: Story = (args) => (
   <TextField {...args} onChange={() => {}}>
-
+    nana
   </TextField>
 );
 
 MultiTextField.args = {
-  disabled: false
+  id: "id",
+  name: "name",
+  disabled: false,
+  placeholder: "",
+  value: "",
+  type: "text",
+  label: "Input Label",
+  error: "",
+  hint: "",
 }
