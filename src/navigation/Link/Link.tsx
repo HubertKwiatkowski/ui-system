@@ -20,10 +20,16 @@ export const Link = ({
   ...props
 }: PropsWithChildren<LinkProps>) => {
 
+  const getIfDisabled = (): string => {
+    return disabled
+      ? styles.disabled
+      : ""
+  }
 
   const dynamicClasses = [
-    styles.template
-  ]
+    styles.template,
+    getIfDisabled()
+  ].join(" ")
 
   return (
     <a 
