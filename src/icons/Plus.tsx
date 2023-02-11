@@ -3,7 +3,6 @@ import { h } from "preact"
 
 export const Plus = () => (
   <svg
-    title="plus"
     width="16" 
     height="16" 
     viewBox="0 0 16 16" 
