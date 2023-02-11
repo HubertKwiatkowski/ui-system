@@ -27,13 +27,13 @@
   transition-duration: .3s;
 }
 
-.inputWrapper input {
+/* .inputWrapper input {
   padding-left: 36px;
 }
 
 .inputWrapperWithIcon input {
   padding-left: 36px;
-}
+} */
 
 .inputLabelTop {
   position: absolute;
@@ -106,4 +106,14 @@
 svg {
   height: 18px;
   width: 18px;
+}
+
+.labelDisabled {
+  color: rgba(72, 70, 73, .38);
+}
+
+.inputDisabled {
+  color: #484649;
+  border-color: #484649;
+  opacity: 0.38;
 }

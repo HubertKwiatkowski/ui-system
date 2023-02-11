@@ -31,13 +31,13 @@ export const MultiTextField: Story = (args) => (
 MultiTextField.args = {
   id: "id",
   name: "name",
-  disabled: false,
-  placeholder: "Placeholder",
-  value: "",
   type: "text",
   label: "Input Label",
-  error: "",
+  placeholder: "Placeholder",
+  value: "",
   hint: "",
+  error: "",
   moving: false,
   withIcon: false,
+  disabled: false,
 }

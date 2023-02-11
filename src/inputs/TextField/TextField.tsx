@@ -42,21 +42,28 @@ export const TextField = (props: TextFieldProps) => {
   const focusLabel = focused && !props.error ? styles.focusedLabel : ""
   const focusWrapper = focused && !props.error ? styles.focusedWrapper : ""
 
-  const errorLabel = props.error ? styles.errorLabel : ""
-  const errorWrapper = props.error ? styles.errorWrapper : ""
+  const errorLabel = props.error && !props.disabled ? styles.errorLabel : ""
+  const errorWrapper = props.error && !props.disabled ? styles.errorWrapper : ""
 
-  const labelWithIcon = !props.value && !props.placeholder && !focused  && props.withIcon 
-    ? styles.labelWithIcon 
-    : ""
+  const labelWithIcon = 
+    props.moving && props.withIcon
+      ? (!!props.value || props.placeholder || focused
+        ? ""
+        : styles.labelWithIcon)
+      : ""
 
   const inputWithIcon = props.withIcon ? styles.inputWrapperWitchIcon : ""
+
+  const inputDisasbledLabel = props.disabled ? styles.labelDisabled : ""
+  const inputDisasbledInput = props.disabled ? styles.inputDisabled : ""
 
   const labelDynamicClasses = [
     styles.baseLabel,
     labelClass,
     focusLabel,
     errorLabel,
-    labelWithIcon
+    labelWithIcon,
+    inputDisasbledLabel,
   ].join(" ")
 
   const inputDynamicClasses = [
@@ -65,6 +72,7 @@ export const TextField = (props: TextFieldProps) => {
     focusWrapper,
     errorWrapper,
     inputWithIcon,
+    inputDisasbledInput,
   ].join(" ")
 
   const iconLeftClasses = [
@@ -107,19 +115,19 @@ export const TextField = (props: TextFieldProps) => {
           className={inputDynamicClasses}
           moving={props.moving}
         />
-        {props.error &&
+        {props.error && !props.disabled && 
           <span className={iconRightClasses}>
           {props.iconError}
         </span>
         }
-        {focused && !props.error &&
+        {focused && !props.disabled && !props.error &&
           <span className={iconRightClasses}>
           {props.iconCancel}
         </span>
         }
       </div>
-      {props.error && <span className={styles.error}>{props.error}</span>}
-      {props.hint && !props.error && (
+      {props.error && !props.disabled && <span className={styles.error}>{props.error}</span>}
+      {((props.hint && !props.error) || (props.hint && props.disabled)) && (
         <span className={styles.hint}>{props.hint}</span>
       )}
     </div>
