@@ -8,7 +8,7 @@ interface LinkProps {
   id: string;
   target?: "_blank" | "_self" | "_parent" | "_top";
   disabled?: boolean;
-  onClick(): void;
+  onClick?: () => boolean;
   icon?: h.JSX.Element;
 }
 

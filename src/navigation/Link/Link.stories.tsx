@@ -38,4 +38,5 @@ LinkElement.args = {
   target: "_blank",
   disabled: false,
   icon: "none",
+  onClick: false,
 }
