@@ -2,6 +2,8 @@ import { h } from "preact";
 import { render, fireEvent, getByTitle } from "@testing-library/preact";
 import "@testing-library/jest-dom/extend-expect";
 import { Button } from "./Button";
+import { Spinner } from '../../icons'
+
 
 test("should render Button component properly", () => {
   const { getByText } = render(<Button onClick={() => {}}>Click me</Button>);
@@ -34,11 +36,11 @@ test("should not be called when Button is disabled", () => {
 });
 
 
-// test("should have SVG spinner visible when Button is in loading state", () => {
-//   const { getByText } = render(<Button isLoading>Click me</Button>);
-//   const spinner = getByText("spinner");
-//   expect(spinner).toBeInTheDocument();
-// });
+test("should have SVG spinner visible when Button is in loading state", () => {
+  const { getByTitle } = render(<Button icon={<Spinner />} isLoading>Click me</Button>);
+  const spinner = getByTitle("spinner")
+  expect(spinner).toBeInTheDocument()
+});
 
 
 test("should not be called when Button is in loading state", () => {

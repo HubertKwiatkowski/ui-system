@@ -2,7 +2,6 @@ import { h } from "preact"
 
 export const Spinner = () => (
   <svg
-    title="spinner"
     width="18" 
     height="18" 
     viewBox="0 0 18 18" 
