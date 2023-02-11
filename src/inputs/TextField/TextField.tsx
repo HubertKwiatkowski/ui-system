@@ -1,5 +1,6 @@
 import { PropsWithChildren, useState } from "preact/compat";
 import { h } from "preact";
+import { Error, Cancel, MagGlass } from '../../icons'
 
 
 import * as styles from "./TextField.module.css";
@@ -16,11 +17,7 @@ interface TextFieldProps {
   hint?: string;
   id: string;
   onChange(): void;
-  moving?: boolean;
   withIcon?: boolean;
-  iconLeft?: h.JSX.Element;
-  iconCancel?: h.JSX.Element;
-  iconError?: h.JSX.Element;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -30,12 +27,8 @@ export const TextField = (props: TextFieldProps) => {
   const labelTop = styles.inputLabelTop
   const labelInside = styles.inputLabelInside
 
-  const labelClass = 
-    props.moving
-      ? (!!props.value || props.placeholder || focused
-        ? labelTop
-        : labelInside)
-      : labelTop
+  const labelClass = !!props.value || props.placeholder || focused ? labelTop : labelInside
+
 
   const errorInputClass = !!props.error ? styles.inputError : ""
 
@@ -45,12 +38,6 @@ export const TextField = (props: TextFieldProps) => {
   const errorLabel = props.error && !props.disabled ? styles.errorLabel : ""
   const errorWrapper = props.error && !props.disabled ? styles.errorWrapper : ""
 
-  const labelWithIcon = 
-    props.moving && props.withIcon
-      ? (!!props.value || props.placeholder || focused
-        ? ""
-        : styles.labelWithIcon)
-      : ""
 
   const inputWithIcon = props.withIcon ? styles.inputWrapperWitchIcon : ""
 
@@ -62,7 +49,6 @@ export const TextField = (props: TextFieldProps) => {
     labelClass,
     focusLabel,
     errorLabel,
-    labelWithIcon,
     inputDisasbledLabel,
   ].join(" ")
 
@@ -100,7 +86,7 @@ export const TextField = (props: TextFieldProps) => {
       <div>
         {props.withIcon &&
             <span className={iconLeftClasses}>
-            {props.iconLeft}
+            {<MagGlass />}
           </span>
         }
         <input
@@ -113,16 +99,16 @@ export const TextField = (props: TextFieldProps) => {
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
           className={inputDynamicClasses}
-          moving={props.moving}
+          // moving={props.moving}
         />
         {props.error && !props.disabled && 
           <span className={iconRightClasses}>
-          {props.iconError}
+          {<Error />}
         </span>
         }
         {focused && !props.disabled && !props.error &&
           <span className={iconRightClasses}>
-          {props.iconCancel}
+          {<Cancel />}
         </span>
         }
       </div>
