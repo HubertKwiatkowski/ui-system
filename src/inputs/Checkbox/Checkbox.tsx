@@ -39,7 +39,10 @@ export const Checkbox = ({
       <input 
         type="checkbox" 
         disabled={disabled}
-        onChange={props.onChange}
+        onChange={() => {
+          if (disabled) return;
+          props.onChange()
+        }}
         checked={checked}
         id={id}
         name={name}
