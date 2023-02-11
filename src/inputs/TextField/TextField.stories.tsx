@@ -2,6 +2,9 @@
 import { Meta, Story } from "@storybook/preact";
 import { h } from "preact";
 import { TextField } from "./TextField";
+import { Error, Cancel, MagGlass } from '../../icons'
+import * as React from "preact/compat";
+
 
 export default {
   component: TextField,
@@ -14,8 +17,14 @@ export default {
 } as Meta;
 
 export const MultiTextField: Story = (args) => (
-  <TextField {...args} onChange={() => {}}>
-    nana
+  <TextField 
+    iconLeft={<MagGlass />}
+    iconCancel={<Cancel />}
+    iconError={<Error />}
+    {...args} 
+    onChange={() => {}}
+  >
+    
   </TextField>
 );
 
@@ -23,11 +32,12 @@ MultiTextField.args = {
   id: "id",
   name: "name",
   disabled: false,
-  placeholder: "placeholder",
+  placeholder: "Placeholder",
   value: "",
   type: "text",
   label: "Input Label",
   error: "",
   hint: "",
   moving: false,
+  withIcon: false,
 }

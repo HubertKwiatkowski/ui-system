@@ -1,6 +1,7 @@
 import { PropsWithChildren, useState } from "preact/compat";
 import { h } from "preact";
 
+
 import * as styles from "./TextField.module.css";
 
 interface TextFieldProps {
@@ -16,6 +17,10 @@ interface TextFieldProps {
   id: string;
   onChange(): void;
   moving?: boolean;
+  withIcon?: boolean;
+  iconLeft?: h.JSX.Element;
+  iconCancel?: h.JSX.Element;
+  iconError?: h.JSX.Element;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -34,19 +39,42 @@ export const TextField = (props: TextFieldProps) => {
 
   const errorInputClass = !!props.error ? styles.inputError : ""
 
-  const focuseLabel = focused ? styles.focusedLabel : ""
-  const focuseWrapper = focused ? styles.focusedWrapper : ""
+  const focusLabel = focused && !props.error ? styles.focusedLabel : ""
+  const focusWrapper = focused && !props.error ? styles.focusedWrapper : ""
+
+  const errorLabel = props.error ? styles.errorLabel : ""
+  const errorWrapper = props.error ? styles.errorWrapper : ""
+
+  const labelWithIcon = !props.value && !props.placeholder && !focused  && props.withIcon 
+    ? styles.labelWithIcon 
+    : ""
+
+  const inputWithIcon = props.withIcon ? styles.inputWrapperWitchIcon : ""
 
   const labelDynamicClasses = [
     styles.baseLabel,
     labelClass,
-    focuseLabel
+    focusLabel,
+    errorLabel,
+    labelWithIcon
   ].join(" ")
 
   const inputDynamicClasses = [
     styles.inputWrapper,
     errorInputClass,
-    focuseWrapper
+    focusWrapper,
+    errorWrapper,
+    inputWithIcon,
+  ].join(" ")
+
+  const iconLeftClasses = [
+    styles.baseIcon,
+    styles.leftIcon,
+  ].join(" ")
+
+  const iconRightClasses = [
+    styles.baseIcon,
+    styles.rightIcon
   ].join(" ")
 
   return (
@@ -58,21 +86,38 @@ export const TextField = (props: TextFieldProps) => {
           className={labelDynamicClasses}
           htmlFor={props.id}
         >
-            {props.label}
+          {props.label}
         </label>
       )}
-      <input
-        id={props.id}
-        name={props.name}        
-        placeholder={props.placeholder}
-        disabled={props.disabled}
-        value={props.value}
-        type={props.type}
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
-        className={inputDynamicClasses}
-        moving={props.moving}
-      />
+      <div>
+        {props.withIcon &&
+            <span className={iconLeftClasses}>
+            {props.iconLeft}
+          </span>
+        }
+        <input
+          id={props.id}
+          name={props.name}        
+          placeholder={props.placeholder}
+          disabled={props.disabled}
+          value={props.value}
+          type={props.type}
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
+          className={inputDynamicClasses}
+          moving={props.moving}
+        />
+        {props.error &&
+          <span className={iconRightClasses}>
+          {props.iconError}
+        </span>
+        }
+        {focused && !props.error &&
+          <span className={iconRightClasses}>
+          {props.iconCancel}
+        </span>
+        }
+      </div>
       {props.error && <span className={styles.error}>{props.error}</span>}
       {props.hint && !props.error && (
         <span className={styles.hint}>{props.hint}</span>
