@@ -8,7 +8,7 @@ interface LinkProps {
   id: string;
   target?: "_blank" | "_self" | "_parent" | "_top";
   disabled?: boolean;
-  onClick?: () => boolean;
+  onClick(): void;
   icon?: h.JSX.Element;
 }
 
@@ -34,8 +34,8 @@ export const Link = ({
   return (
     <a 
       href={props.to}
-      id="id"
-      target="_blank"
+      id={props.id}
+      target={props.target}
       disabled={disabled}
       onClick={props.onClick}
       className={dynamicClasses}
