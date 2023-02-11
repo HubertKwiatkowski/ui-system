@@ -48,7 +48,11 @@ export const Button = ({
   return (
     <button
       type="button"
-      onClick={props.onClick}
+      onClick={() => {
+        if (disabled) return;
+        if (isLoading) return;
+        props.onClick()
+      }}
       disabled={disabled}
       variant={"primary"}
       className={dynamicClasses}
