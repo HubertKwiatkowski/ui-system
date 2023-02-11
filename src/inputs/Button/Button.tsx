@@ -54,7 +54,6 @@ export const Button = ({
         props.onClick()
       }}
       disabled={disabled}
-      variant={"primary"}
       className={dynamicClasses}
     >
       {props.icon}
