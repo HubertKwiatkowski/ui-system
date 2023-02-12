@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+.inputWrapper {
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+.baseLabel {
+  display: block;
+  transition-duration: 0.3s;
+}
+
+.labelWithIcon {
+  margin-left: 24px;
+}
+
+.inputWrapper input {
+  display: block;
+  padding: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  min-width: 210px;
+  color: #000;
+  outline: 2px solid black;
+  border: none;
+  transition-duration: .3s;
+}
+
+/* .inputWrapper input {
+  padding-left: 36px;
+}
+
+.inputWrapperWithIcon input {
+  padding-left: 36px;
+} */
+
+.inputLabelTop {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  background: white;
+  padding-inline: 4px;
+  z-index: 2;
+}
+
+.inputLabelInside {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+}
+
+.focusedLabel {
+  color: #23A094;
+}
+
+.focusedWrapper input:focus {
+  outline: 2px solid #23A094;
+}
+
+.hint,
+.error {
+  font-family: 'Inter';
+  font-size: 12px;
+  line-height: 16px;
+  margin-left: 16px;
+}
+
+.hint {
+  color: #605D62;
+}
+
+.error {
+  color: #B3261E;
+}
+
+.errorLabel {
+  color: #B3261E;
+}
+
+.errorWrapper input {
+  outline: 2px solid #B3261E;
+}
+
+.baseIcon {
+  z-index: 1;
+  top: 16px;
+  position: absolute;
+}
+
+.leftIcon {
+  left: 10px;
+}
+
+.rightIcon {
+  top: 16px;
+  right: 5px;
+}
+
+.rightIcon:hover {
+  cursor: pointer;
+}
+
+svg {
+  height: 18px;
+  width: 18px;
+}
+
+.labelDisabled {
+  color: rgba(72, 70, 73, .38);
+}
+
+.inputDisabled {
+  color: #484649;
+  border-color: #484649;
+  opacity: 0.38;
+}
