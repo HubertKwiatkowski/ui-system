@@ -46,7 +46,10 @@ export const Switch = ({
         type="checkbox" 
         checked={checked}
         disabled={disabled}
-        onChange={props.onChange}
+        onChange={() => {
+          if (disabled) return;
+          props.onChange()
+        }}
         id={id}
       />
       <span className={sliderClasses}></span>
