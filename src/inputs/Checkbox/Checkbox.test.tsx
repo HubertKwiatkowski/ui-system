@@ -10,7 +10,7 @@ test("onChange handler should be called when clicked on it", () => {
   const { getByRole } = render(<Checkbox onChange={handleChange}>Some Label</Checkbox>);
   const checkboxElement = getByRole("checkbox");
 
-  fireEvent.click(checkboxElement);
+  fireEvent.change(checkboxElement);
 
   expect(handleChange).toBeCalled();
 });
