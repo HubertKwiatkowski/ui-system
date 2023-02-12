@@ -22,12 +22,14 @@ test("onChange handler should be called when clicking on it, when one is not dis
 });
 
 
-test("Change handler should not be called when Switch is disabled", () => {
+test("onChange handler should not be called when Switch is disabled", () => {
   const handleChange = jest.fn();
 
   const { getByRole } = render(<Switch disabled onChange={handleChange}></Switch>);
   const switchElement = getByRole("checkbox");
 
+  expect(switchElement.disabled).toBe(true)
+  
   fireEvent.click(switchElement);
 
   expect(handleChange).not.toBeCalled();
