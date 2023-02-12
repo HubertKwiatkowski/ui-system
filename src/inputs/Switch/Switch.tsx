@@ -15,6 +15,7 @@ export const Switch = ({
   checked = false,
   disabled = false,
   id = "id",
+  ...props
 }: PropsWithChildren<SwitchProps>) => {
 
   const getIfDisabledLabel = (): string => {
@@ -45,6 +46,10 @@ export const Switch = ({
         type="checkbox" 
         checked={checked}
         disabled={disabled}
+        onChange={() => {
+          if (disabled) return;
+          props.onChange()
+        }}
         id={id}
       />
       <span className={sliderClasses}></span>
