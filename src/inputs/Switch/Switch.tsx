@@ -3,7 +3,6 @@ import { h } from "preact";
 
 import * as styles from "./Switch.module.css";
 
-
 interface SwitchProps {
   checked?: boolean;
   disabled?: boolean;
@@ -16,38 +15,22 @@ export const Switch = ({
   disabled = false,
   id = "id",
 }: PropsWithChildren<SwitchProps>) => {
-
   const getIfDisabledLabel = (): string => {
-    return disabled
-      ? styles.switchLabelDisabled
-      : "";
-  };  
+    return disabled ? styles.switchLabelDisabled : "";
+  };
 
   const getIfDisabledSlider = (): string => {
-    return disabled
-      ? styles.switchSliderDisabled
-      : "";
-  }; 
+    return disabled ? styles.switchSliderDisabled : "";
+  };
 
-  const labelClasses = [
-    styles.switchLabel,
-    getIfDisabledLabel(),
-  ].join(" ")
+  const labelClasses = [styles.switchLabel, getIfDisabledLabel()].join(" ");
 
-  const sliderClasses = [
-    styles.switchSlider,
-    getIfDisabledSlider()
-  ].join(" ")
+  const sliderClasses = [styles.switchSlider, getIfDisabledSlider()].join(" ");
 
   return (
     <label className={labelClasses}>
-      <input 
-        type="checkbox" 
-        checked={checked}
-        disabled={disabled}
-        id={id}
-      />
+      <input type="checkbox" checked={checked} disabled={disabled} id={id} />
       <span className={sliderClasses}></span>
     </label>
-  )
-}
+  );
+};

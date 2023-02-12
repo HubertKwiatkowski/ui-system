@@ -4,14 +4,14 @@ The `Button` component is a simple UI element that allows the user to perform an
 
 Create a `Button` component based on design
 
-**Requirements**  
+**Requirements**
 
 Component has to implement following properties:
 
-* `` `type` `` (string)\[_optional_\]: The type of the button element. Can be one of '_button_' or '_submit_'.
-* `` `disabled` `` (boolean)\[_optional_\]: Indicates whether the button is disabled or not. Default to _false_
-* `` `isLoading` `` (boolean)\[_optional_\]: Indicates when button is in loading state. Default to _false_
-* `` `onClick` `` (function): A function that is called when the button is clicked
-* `` `variant` `` (string): The variant of the button style. Can be one of '_primary_', '_secondary_'
+- `` `type` `` (string)\[_optional_\]: The type of the button element. Can be one of '_button_' or '_submit_'.
+- `` `disabled` `` (boolean)\[_optional_\]: Indicates whether the button is disabled or not. Default to _false_
+- `` `isLoading` `` (boolean)\[_optional_\]: Indicates when button is in loading state. Default to _false_
+- `` `onClick` `` (function): A function that is called when the button is clicked
+- `` `variant` `` (string): The variant of the button style. Can be one of '_primary_', '_secondary_'
 
 **Example implementation**

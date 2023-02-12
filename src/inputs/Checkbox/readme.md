@@ -4,15 +4,15 @@
 
 Create `Checkbox` component based on design
 
-**Requirements**  
+**Requirements**
 
 Component has to implement following properties:
 
-* `` `id` `` (string): The ID of the checkbox element
-* `` `name` `` (string): The name of the checkbox element
-* `` `value` `` (string): The value of the checkbox element
-* `` `label` `` (string): The label for the checkbox element
-* `` `checked` `` (boolean): Indicates whether the checkbox is checked or not
-* `` `onChange` `` (function): A function that is called when the checkbox value is changed
+- `` `id` `` (string): The ID of the checkbox element
+- `` `name` `` (string): The name of the checkbox element
+- `` `value` `` (string): The value of the checkbox element
+- `` `label` `` (string): The label for the checkbox element
+- `` `checked` `` (boolean): Indicates whether the checkbox is checked or not
+- `` `onChange` `` (function): A function that is called when the checkbox value is changed
 
 **Example** **implementation**

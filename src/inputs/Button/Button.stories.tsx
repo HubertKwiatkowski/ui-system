@@ -2,7 +2,7 @@
 import { Meta, Story } from "@storybook/preact";
 import { h } from "preact";
 import { Button } from "./Button";
-import { Plus, Spinner } from '../../icons'
+import { Plus, Spinner } from "../../icons";
 import * as React from "preact/compat";
 
 export default {

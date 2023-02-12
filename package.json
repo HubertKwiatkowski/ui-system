@@ -7,7 +7,8 @@
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "pretty": "prettier --write ."
   },
   "engines": {
     "node": ">=16.0.0 <17.0.0"

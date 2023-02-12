@@ -4,10 +4,4 @@ import { Error } from "./Error";
 import { Cancel } from "./Cancel";
 import { MagGlass } from "./MagGlass";
 
-export {
-  Plus,
-  Spinner,
-  Error,
-  Cancel,
-  MagGlass,
-}
+export { Plus, Spinner, Error, Cancel, MagGlass };

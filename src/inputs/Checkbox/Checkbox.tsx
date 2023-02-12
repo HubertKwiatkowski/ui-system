@@ -22,26 +22,20 @@ export const Checkbox = ({
   label = "label",
   ...props
 }: PropsWithChildren<CheckboxProps>) => {
-
   const getIfDisabled = (): string => {
-    return disabled
-      ? styles.disabled
-      : "";
-  };  
-  
-  const classes = [
-    styles.checkboxLabel,
-    getIfDisabled()
-  ].join(" ");
+    return disabled ? styles.disabled : "";
+  };
+
+  const classes = [styles.checkboxLabel, getIfDisabled()].join(" ");
 
   return (
     <label className={classes}>
-      <input 
-        type="checkbox" 
+      <input
+        type="checkbox"
         disabled={disabled}
         onChange={() => {
           if (disabled) return;
-          props.onChange()
+          props.onChange();
         }}
         checked={checked}
         id={id}
@@ -50,5 +44,5 @@ export const Checkbox = ({
       />
       {label}
     </label>
-  )
-}
+  );
+};
