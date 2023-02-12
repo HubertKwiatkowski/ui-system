@@ -99,7 +99,10 @@ export const TextField = (props: TextFieldProps) => {
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
           className={inputDynamicClasses}
-          // moving={props.moving}
+          onChange={() => {
+            if (disabled) return;
+            props.onChange()
+          }}
         />
         {props.error && !props.disabled && 
           <span className={iconRightClasses}>
