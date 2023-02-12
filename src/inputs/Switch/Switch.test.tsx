@@ -18,12 +18,11 @@ test("onChange handler should be called when clicking on it, when one is not dis
   
   fireEvent.click(switchElement)
 
-  // cant figure out why the one below does not work - it worked for the Checkox element, but here it does not...
   expect(handleChange).toBeCalled();
 });
 
 
-test("nChange handler should not be called when Switch is disabled", () => {
+test("Change handler should not be called when Switch is disabled", () => {
   const handleChange = jest.fn();
 
   const { getByRole } = render(<Switch disabled onChange={handleChange}></Switch>);

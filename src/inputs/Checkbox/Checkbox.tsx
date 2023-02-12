@@ -39,8 +39,8 @@ export const Checkbox = ({
       <input 
         type="checkbox" 
         disabled={disabled}
-        onChange={props.onChange}
         checked={checked}
+        onChange={props.onChange}
         id={id}
         name={name}
         value={value}
