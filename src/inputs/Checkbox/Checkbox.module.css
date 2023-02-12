@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 
 .checkboxLabel {
   display: flex;
   align-items: center;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 20px;
   font-size: 14px;
 }
 
 input[type="checkbox"] {
-  accent-color: #B23386;
+  accent-color: #b23386;
   width: 18px;
   height: 18px;
   margin-right: 11px;
 }
 
 .disabled {
-  color: #AEAAAE;
+  color: #aeaaae;
 }

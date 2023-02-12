@@ -1,109 +1,109 @@
 .primary {
-    color: #000000;
-    border: 1px solid #000000;
+  color: #000000;
+  border: 1px solid #000000;
 }
 
 .secondary {
-    color: #90A8ED;
-    border: 1px solid #90A8ED;
+  color: #90a8ed;
+  border: 1px solid #90a8ed;
 }
 
 .template {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-style: normal;
-    font-weight: 500;
-    background: #FFFFFF;
-    font-size: 14px;
-    min-width: 103px;
-    padding: 10px 24px;
-    line-height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  background: #ffffff;
+  font-size: 14px;
+  min-width: 103px;
+  padding: 10px 24px;
+  line-height: 20px;
 }
 
 .disabledSecondary {
-    border: 1px solid rgba(28, 27, 31, 0.12);
-    opacity: 0.38;
+  border: 1px solid rgba(28, 27, 31, 0.12);
+  opacity: 0.38;
 }
 
 .primary:hover {
-    background: #B23386;
-    border: 1px solid #000000;
-    color: #FFFFFF;
-    box-shadow: 4px 4px 0px #000000;
+  background: #b23386;
+  border: 1px solid #000000;
+  color: #ffffff;
+  box-shadow: 4px 4px 0px #000000;
 }
 
 .primary:active {
-    color: #fff;
-    background: #B23386;
-    border-width: 3px 1px 1px 3px;
-    border-style: solid;
-    border-color: #000000;
-    box-shadow: unset;
+  color: #fff;
+  background: #b23386;
+  border-width: 3px 1px 1px 3px;
+  border-style: solid;
+  border-color: #000000;
+  box-shadow: unset;
 }
 
 .secondary:hover {
-    background: #90A8ED;
-    color: #FFFFFF;
-    box-shadow: 4px 4px 0px #000000;
+  background: #90a8ed;
+  color: #ffffff;
+  box-shadow: 4px 4px 0px #000000;
 }
 
 .secondary:active {
-    color: #fff;
-    background: #90A8ED;
-    border-width: 3px 1px 1px 3px;
-    border-style: solid;
-    border-color: #000000;
-    box-shadow: unset;
+  color: #fff;
+  background: #90a8ed;
+  border-width: 3px 1px 1px 3px;
+  border-style: solid;
+  border-color: #000000;
+  box-shadow: unset;
 }
 
-.isLoadingPrimary, 
-.isLoadingPrimary:hover, 
+.isLoadingPrimary,
+.isLoadingPrimary:hover,
 .isLoadingPrimary:active {
-    background: #FF90E8;
-    color: #FFFFFF;
-    border: none;
-    box-shadow: unset;
+  background: #ff90e8;
+  color: #ffffff;
+  border: none;
+  box-shadow: unset;
 }
 
-.isLoadingSecondary, 
-.isLoadingSecondary:hover, 
+.isLoadingSecondary,
+.isLoadingSecondary:hover,
 .isLoadingSecondary:active {
-    background: #90A8ED;
-    color: #FFFFFF;
-    border: none;
-    box-shadow: unset;
+  background: #90a8ed;
+  color: #ffffff;
+  border: none;
+  box-shadow: unset;
 }
 
-.disabledPrimary, 
-.disabledPrimary:hover, 
-.disabledPrimary:active, 
-.disabledSecondary, 
-.disabledSecondary:hover, 
+.disabledPrimary,
+.disabledPrimary:hover,
+.disabledPrimary:active,
+.disabledSecondary,
+.disabledSecondary:hover,
 .disabledSecondary:active {
-    opacity: 0.38;
-    box-shadow: unset;
-    filter: unset;
-    color: #1C1B1F;
+  opacity: 0.38;
+  box-shadow: unset;
+  filter: unset;
+  color: #1c1b1f;
 }
 
-.disabledPrimary, 
-.disabledPrimary:hover, 
+.disabledPrimary,
+.disabledPrimary:hover,
 .disabledPrimary:active {
-    background: #E6E1E5;
-    border: 1px solid transparent;
+  background: #e6e1e5;
+  border: 1px solid transparent;
 }
 
-.disabledSecondary, 
-.disabledSecondary:hover, 
+.disabledSecondary,
+.disabledSecondary:hover,
 .disabledSecondary:active {
-    background: #fff;
-    border: 1px solid #E6E1E5;
+  background: #fff;
+  border: 1px solid #e6e1e5;
 }
 
 svg {
-    height: 12px;
-    width: 12px;
-    margin-right: 11px;
+  height: 12px;
+  width: 12px;
+  margin-right: 11px;
 }

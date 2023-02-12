@@ -8,7 +8,9 @@
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "pretty": "prettier --write .",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=16.0.0 <17.0.0"
@@ -36,6 +38,7 @@
     "core-js": "^3.27.1",
     "eslint": "^8.34.0",
     "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
     "jest": "^27.0.0",
     "jest-preset-preact": "^4.0.5",
     "preact-cli": "^3.4.2",

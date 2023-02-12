@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 
 .inputWrapper {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   position: relative;
   display: inline-block;
 }
@@ -24,7 +24,7 @@
   color: #000;
   outline: 2px solid black;
   border: none;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
 }
 
 /* .inputWrapper input {
@@ -53,35 +53,35 @@
 }
 
 .focusedLabel {
-  color: #23A094;
+  color: #23a094;
 }
 
 .focusedWrapper input:focus {
-  outline: 2px solid #23A094;
+  outline: 2px solid #23a094;
 }
 
 .hint,
 .error {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 12px;
   line-height: 16px;
   margin-left: 16px;
 }
 
 .hint {
-  color: #605D62;
+  color: #605d62;
 }
 
 .error {
-  color: #B3261E;
+  color: #b3261e;
 }
 
 .errorLabel {
-  color: #B3261E;
+  color: #b3261e;
 }
 
 .errorWrapper input {
-  outline: 2px solid #B3261E;
+  outline: 2px solid #b3261e;
 }
 
 .baseIcon {
@@ -109,7 +109,7 @@ svg {
 }
 
 .labelDisabled {
-  color: rgba(72, 70, 73, .38);
+  color: rgba(72, 70, 73, 0.38);
 }
 
 .inputDisabled {

@@ -19,20 +19,14 @@ export const Link = ({
   disabled = false,
   ...props
 }: PropsWithChildren<LinkProps>) => {
-
   const getIfDisabled = (): string => {
-    return disabled
-      ? styles.disabled
-      : ""
-  }
+    return disabled ? styles.disabled : "";
+  };
 
-  const dynamicClasses = [
-    styles.template,
-    getIfDisabled()
-  ].join(" ")
+  const dynamicClasses = [styles.template, getIfDisabled()].join(" ");
 
   return (
-    <a 
+    <a
       href={props.to}
       id={props.id}
       target={props.target}
@@ -42,6 +36,6 @@ export const Link = ({
     >
       {props.icon}
       {props.children}
-    </a>      
-  )
-}
+    </a>
+  );
+};
