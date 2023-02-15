@@ -4,13 +4,13 @@ The `Switch` component is a simple yet powerful UI element that allows the user 
 
 Create a `Switch` component
 
-**Requirements**  
+**Requirements**
 
 Component has to implement following properties:
 
-* `` _`checked`_ `` (boolean): If `true`, the component is checked.
-* `` _`disabled`_ `` (boolean)\[_optional_\]: Indicates whether the `Switch` is disabled or not
-* `` _`onChange`_ `` (function): The event source of the callback
-* `` _`id`_ `` (string)\[_optional_\]: The id of the `input` element.
+- `` _`checked`_ `` (boolean): If `true`, the component is checked.
+- `` _`disabled`_ `` (boolean)\[_optional_\]: Indicates whether the `Switch` is disabled or not
+- `` _`onChange`_ `` (function): The event source of the callback
+- `` _`id`_ `` (string)\[_optional_\]: The id of the `input` element.
 
 **Example implementation**

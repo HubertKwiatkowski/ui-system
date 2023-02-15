@@ -3,7 +3,6 @@ import { h } from "preact";
 
 import * as styles from "./Button.module.css";
 
-
 interface ButtonProps {
   onClick(): void;
   variant?: "primary" | "secondary";
@@ -51,7 +50,7 @@ export const Button = ({
       onClick={() => {
         if (disabled) return;
         if (isLoading) return;
-        props.onClick()
+        props.onClick();
       }}
       disabled={disabled}
       className={dynamicClasses}

@@ -4,7 +4,7 @@ import { Switch } from "./Switch";
 
 export default {
   component: Switch,
-  argTypes: {}
+  argTypes: {},
 } as Meta;
 
 export const SwitchField: Story = (args) => (
@@ -14,5 +14,5 @@ export const SwitchField: Story = (args) => (
 SwitchField.args = {
   checked: false,
   disabled: false,
-  id: "switch-00"
-}
+  id: "switch-00",
+};

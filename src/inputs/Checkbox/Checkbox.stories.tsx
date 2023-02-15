@@ -6,9 +6,7 @@ import * as React from "preact/compat";
 
 export default {
   component: Checkbox,
-  argTypes: {
-
-  }
+  argTypes: {},
 } as Meta;
 
 export const CheckboxField: Story = (args) => (
@@ -24,4 +22,4 @@ CheckboxField.args = {
   name: "Name",
   value: "Value",
   label: "Checkbox label",
-}
+};

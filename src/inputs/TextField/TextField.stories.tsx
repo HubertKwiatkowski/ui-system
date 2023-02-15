@@ -4,7 +4,6 @@ import { h } from "preact";
 import { TextField } from "./TextField";
 import * as React from "preact/compat";
 
-
 export default {
   component: TextField,
   argTypes: {
@@ -16,9 +15,7 @@ export default {
 } as Meta;
 
 export const MultiTextField: Story = (args) => (
-  <TextField {...args} onChange={() => {}}>
-    
-  </TextField>
+  <TextField {...args} onChange={() => {}}></TextField>
 );
 
 MultiTextField.args = {
@@ -32,4 +29,4 @@ MultiTextField.args = {
   error: "",
   withIcon: false,
   disabled: false,
-}
+};
