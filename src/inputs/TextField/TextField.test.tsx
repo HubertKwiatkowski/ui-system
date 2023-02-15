@@ -1,9 +1,7 @@
-import { h } from "preact";
+import * as React from "react";
 import {
   render,
   fireEvent,
-  getByLabelText,
-  getByRole,
 } from "@testing-library/preact";
 import "@testing-library/jest-dom/extend-expect";
 import { TextField } from "./TextField";

@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "preact/compat";
-import { h } from "preact";
+import { PropsWithChildren } from "react";
+import * as React from "react";
 
 import * as styles from "./Switch.module.css";
 

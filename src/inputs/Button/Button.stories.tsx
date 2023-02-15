@@ -1,9 +1,8 @@
 // Button.stories.tsx
 import { Meta, Story } from "@storybook/preact";
-import { h } from "preact";
 import { Button } from "./Button";
 import { Plus, Spinner } from "../../icons";
-import * as React from "preact/compat";
+import * as React from "react";
 
 export default {
   component: Button,
@@ -29,7 +28,7 @@ export default {
 } as Meta;
 
 export const MultiButton: Story = (args) => (
-  <Button icon={<></>} {...args} onClick={() => {}}>
+  <Button icon={<></>} {...args}>
     Click me!
   </Button>
 );

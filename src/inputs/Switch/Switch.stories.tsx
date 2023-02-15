@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/preact";
-import { h } from "preact";
+import * as React from "react";
 import { Switch } from "./Switch";
 
 export default {
@@ -8,7 +8,7 @@ export default {
 } as Meta;
 
 export const SwitchField: Story = (args) => (
-  <Switch {...args} onChange={() => {}}></Switch>
+  <Switch {...args}></Switch>
 );
 
 SwitchField.args = {

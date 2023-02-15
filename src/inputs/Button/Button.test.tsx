@@ -1,5 +1,5 @@
-import { h } from "preact";
-import { render, fireEvent, getByTitle } from "@testing-library/preact";
+import * as React from "react";
+import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { Button } from "./Button";
 import { Spinner } from "../../icons";

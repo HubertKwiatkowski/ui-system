@@ -1,5 +1,5 @@
-import { PropsWithChildren, useState } from "preact/compat";
-import { h } from "preact";
+import { useState } from "react";
+import * as React from "react";
 import { Error, Cancel, MagGlass } from "../../icons";
 
 import * as styles from "./TextField.module.css";
@@ -28,7 +28,7 @@ export const TextField = (props: TextFieldProps) => {
   const labelClass =
     !!props.value || props.placeholder || focused ? labelTop : labelInside;
 
-  const errorInputClass = !!props.error ? styles.inputError : "";
+  const errorInputClass = !props.error ? styles.inputError : "";
 
   const focusLabel = focused && !props.error ? styles.focusedLabel : "";
   const focusWrapper = focused && !props.error ? styles.focusedWrapper : "";

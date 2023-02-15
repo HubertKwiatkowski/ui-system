@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "preact/compat";
-import { h } from "preact";
+import { PropsWithChildren } from "react";
+import * as React from "react";
 
 import * as styles from "./Button.module.css";
 
@@ -9,7 +9,7 @@ interface ButtonProps {
   type?: "button" | "submit";
   disabled?: boolean;
   isLoading?: boolean;
-  icon?: h.JSX.Element;
+  icon?: JSX.Element;
 }
 
 export const Button = ({

@@ -1,4 +1,4 @@
-import { h } from "preact";
+import * as React from "react";
 import { render, fireEvent } from "@testing-library/preact";
 import "@testing-library/jest-dom/extend-expect";
 import { Switch } from "./Switch";
