@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,33 +121,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,33 +167,33 @@ interface SwitchProps {
   id: string;
 }
 &nbsp;
-export const Switch = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
-  checked = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
-  disabled = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
-  id = <span class="branch-0 cbranch-no" title="branch not covered" >"id",</span>
+export const Switch = ({
+  checked = false,
+  disabled = false,
+  id = "id",
   ...props
 }: PropsWithChildren&lt;SwitchProps&gt;) =&gt; {
-  const getIfDisabledLabel = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span>: string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return disabled ? styles.switchLabelDisabled : "";</span>
+  const getIfDisabledLabel = (): string =&gt; {
+    return disabled ? styles.switchLabelDisabled : "";
   };
 &nbsp;
-  const getIfDisabledSlider = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span>: string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return disabled ? styles.switchSliderDisabled : "";</span>
+  const getIfDisabledSlider = (): string =&gt; {
+    return disabled ? styles.switchSliderDisabled : "";
   };
 &nbsp;
-  const labelClasses = <span class="cstat-no" title="statement not covered" >[styles.switchLabel, getIfDisabledLabel()].join(" ");</span>
+  const labelClasses = [styles.switchLabel, getIfDisabledLabel()].join(" ");
 &nbsp;
-  const sliderClasses = <span class="cstat-no" title="statement not covered" >[styles.switchSlider, getIfDisabledSlider()].join(" ");</span>
+  const sliderClasses = [styles.switchSlider, getIfDisabledSlider()].join(" ");
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;label className={labelClasses}&gt;
       &lt;input 
         type="checkbox" 
         checked={checked}
         disabled={disabled}
-        onChange={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >          if (disabled) <span class="cstat-no" title="statement not covered" >return;</span></span>
-<span class="cstat-no" title="statement not covered" >          props.onChange()</span>
+        onChange={() =&gt; {
+          if (disabled) return;
+          props.onChange()
         }}
         id={id}
       /&gt;
@@ -208,7 +208,7 @@ export const Switch = <span class="cstat-no" title="statement not covered" ><spa
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-15T11:39:43.303Z
+                at 2023-02-20T16:41:01.009Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

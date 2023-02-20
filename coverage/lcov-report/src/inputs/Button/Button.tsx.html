@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>14/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>13/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -139,45 +139,45 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,45 +201,45 @@ interface ButtonProps {
   icon?: JSX.Element;
 }
 &nbsp;
-export const Button = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
-  variant = <span class="branch-0 cbranch-no" title="branch not covered" >"primary",</span>
-  disabled = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
-  isLoading = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+export const Button = ({
+  variant = "primary",
+  disabled = false,
+  isLoading = false,
   ...props
 }: PropsWithChildren&lt;ButtonProps&gt;) =&gt; {
   const variantClass =
-<span class="cstat-no" title="statement not covered" >    variant === "primary" ? styles.primary : styles.secondary;</span>
+    variant === "primary" ? styles.primary : <span class="branch-1 cbranch-no" title="branch not covered" >styles.secondary;</span>
 &nbsp;
-  const getDisabledClassForSpecificVariant = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span>: string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (disabled) {</span>
-<span class="cstat-no" title="statement not covered" >      return variant === "primary"</span>
+  const getDisabledClassForSpecificVariant = (): string =&gt; {
+    if (disabled) {
+      return variant === "primary"
         ? styles.disabledPrimary
-        : styles.disabledSecondary;
+        : <span class="branch-1 cbranch-no" title="branch not covered" >styles.disabledSecondary;</span>
     }
   };
 &nbsp;
-  const getIsLoadingClassForSpecificVariant = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span>: string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (isLoading) {</span>
-<span class="cstat-no" title="statement not covered" >      return variant === "primary"</span>
+  const getIsLoadingClassForSpecificVariant = (): string =&gt; {
+    if (isLoading) {
+      return variant === "primary"
         ? styles.isLoadingPrimary
-        : styles.isLoadingSecondary;
+        : <span class="branch-1 cbranch-no" title="branch not covered" >styles.isLoadingSecondary;</span>
     }
   };
 &nbsp;
-  const dynamicClasses = <span class="cstat-no" title="statement not covered" >[</span>
+  const dynamicClasses = [
     styles.template,
     variantClass,
     getDisabledClassForSpecificVariant(),
     getIsLoadingClassForSpecificVariant(),
   ].join(" ");
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;button
       type="button"
-      onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >        if (disabled) <span class="cstat-no" title="statement not covered" >return;</span></span>
-<span class="cstat-no" title="statement not covered" >        if (isLoading) <span class="cstat-no" title="statement not covered" >return;</span></span>
-<span class="cstat-no" title="statement not covered" >        props.onClick();</span>
+      onClick={() =&gt; {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (disabled) <span class="cstat-no" title="statement not covered" >return;</span>
+        if (isLoading) return;
+        props.onClick();
       }}
       disabled={disabled}
       className={dynamicClasses}
@@ -256,7 +256,7 @@ export const Button = <span class="cstat-no" title="statement not covered" ><spa
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-15T11:39:43.303Z
+                at 2023-02-20T16:41:01.009Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
