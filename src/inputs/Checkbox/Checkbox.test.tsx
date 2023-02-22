@@ -1,6 +1,5 @@
 import * as React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
 import { Checkbox } from "./Checkbox";
 
 test("onChange handler should be called when clicked on it", () => {
@@ -36,19 +35,17 @@ test("should be in checked state, after clicking on it, and should be unchecked 
   const handleChange = jest.fn();
 
   const { getByRole } = render(
-    <Checkbox onChange={handleChange} >
+    <Checkbox onChange={handleChange} checked={false}>
       Checkbox Label
     </Checkbox>);
   const checkboxElement = getByRole("checkbox");
 
-  
   fireEvent.click(checkboxElement);
-  // expect(checkboxElement).toBeChecked();
+  expect(checkboxElement).toBeChecked();
 
-  expect(checkboxElement.checked).toEqual(true)
   
   fireEvent.click(checkboxElement);
-  // expect(checkboxElement).not.toBeChecked();
-  expect(checkboxElement.checked).toEqual(false)
+  expect(checkboxElement).not.toBeChecked();
+  // expect(checkboxElement.checked).toEqual(false)
 
 });

@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "react";
 import * as React from "react";
+import { PropsWithChildren, useState } from "react";
 
 import * as styles from "./Switch.module.css";
 
@@ -11,11 +11,14 @@ interface SwitchProps {
 }
 
 export const Switch = ({
-  checked = false,
+  // checked = false,
   disabled = false,
   id = "id",
   ...props
 }: PropsWithChildren<SwitchProps>) => {
+
+  const [checked, setChecked] = useState(false); 
+
   const getIfDisabledLabel = (): string => {
     return disabled ? styles.switchLabelDisabled : "";
   };
@@ -36,6 +39,7 @@ export const Switch = ({
         disabled={disabled}
         onChange={() => {
           if (disabled) return;
+          setChecked(!checked);
           props.onChange()
         }}
         id={id}

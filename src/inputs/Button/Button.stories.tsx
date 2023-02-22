@@ -1,5 +1,5 @@
 // Button.stories.tsx
-import { Meta, Story } from "@storybook/preact";
+import { Meta, Story } from "@storybook/react";
 import { Button } from "./Button";
 import { Plus, Spinner } from "../../icons";
 import * as React from "react";

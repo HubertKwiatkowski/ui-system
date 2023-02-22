@@ -1,5 +1,5 @@
 // TextField.stories.tsx
-import { Meta, Story } from "@storybook/preact";
+import { Meta, Story } from "@storybook/react";
 import * as React from "react";
 import { TextField } from "./TextField";
 
