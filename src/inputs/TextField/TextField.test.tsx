@@ -1,11 +1,5 @@
-import { h } from "preact";
-import {
-  render,
-  fireEvent,
-  getByLabelText,
-  getByRole,
-} from "@testing-library/preact";
-import "@testing-library/jest-dom/extend-expect";
+import * as React from "react";
+import { render, fireEvent } from "@testing-library/react";
 import { TextField } from "./TextField";
 
 test("onChange handler should be called when typing onto it", () => {

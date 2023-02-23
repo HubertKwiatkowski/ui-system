@@ -1,8 +1,8 @@
 // TextField.stories.tsx
-import { Meta, Story } from "@storybook/preact";
-import { h } from "preact";
+import { Meta, Story } from "@storybook/react";
+import * as React from "react";
 import { TextField } from "./TextField";
-import * as React from "preact/compat";
+
 
 export default {
   component: TextField,
@@ -15,7 +15,7 @@ export default {
 } as Meta;
 
 export const MultiTextField: Story = (args) => (
-  <TextField {...args} onChange={() => {}}></TextField>
+  <TextField {...args}></TextField>
 );
 
 MultiTextField.args = {

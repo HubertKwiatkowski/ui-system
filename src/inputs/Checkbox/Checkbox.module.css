@@ -6,15 +6,18 @@
   font-family: "Inter", sans-serif;
   line-height: 20px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 input[type="checkbox"] {
   accent-color: #b23386;
   width: 18px;
   height: 18px;
-  margin-right: 11px;
+  margin-right: 12px;
+
 }
 
 .disabled {
   color: #aeaaae;
+  cursor: not-allowed;
 }

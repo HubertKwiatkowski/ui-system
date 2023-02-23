@@ -1,8 +1,7 @@
 // Checkbox.stories.tsx
-import { Meta, Story } from "@storybook/preact";
-import { h } from "preact";
+import { Meta, Story } from "@storybook/react";
+import * as React from "react";
 import { Checkbox } from "./Checkbox";
-import * as React from "preact/compat";
 
 export default {
   component: Checkbox,
@@ -10,7 +9,7 @@ export default {
 } as Meta;
 
 export const CheckboxField: Story = (args) => (
-  <Checkbox {...args} onChange={() => {}}>
+  <Checkbox {...args}>
     Checkbox label goes here
   </Checkbox>
 );

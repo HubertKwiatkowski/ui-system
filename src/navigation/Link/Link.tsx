@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "preact/compat";
-import { h } from "preact";
+import { PropsWithChildren } from "react";
+import * as React from "react";
 
 import * as styles from "./Link.module.css";
 
@@ -9,7 +9,7 @@ interface LinkProps {
   target?: "_blank" | "_self" | "_parent" | "_top";
   disabled?: boolean;
   onClick(): void;
-  icon?: h.JSX.Element;
+  icon?: JSX.Element;
 }
 
 export const Link = ({
@@ -27,9 +27,9 @@ export const Link = ({
 
   return (
     <a
-      href={props.to}
-      id={props.id}
-      target={props.target}
+      href={to}
+      id={id}
+      target={target}
       disabled={disabled}
       onClick={props.onClick}
       className={dynamicClasses}

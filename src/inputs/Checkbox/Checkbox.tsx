@@ -1,6 +1,5 @@
-import { PropsWithChildren } from "preact/compat";
-import { h } from "preact";
-
+import * as React from "react";
+import { PropsWithChildren, useState } from "react";
 import * as styles from "./Checkbox.module.css";
 
 interface CheckboxProps {
@@ -14,7 +13,7 @@ interface CheckboxProps {
 }
 
 export const Checkbox = ({
-  checked = false,
+  // checked = false,
   disabled = false,
   id = "id",
   name = "name",
@@ -22,6 +21,9 @@ export const Checkbox = ({
   label = "label",
   ...props
 }: PropsWithChildren<CheckboxProps>) => {
+
+  const [checked, setChecked] = useState(false); 
+
   const getIfDisabled = (): string => {
     return disabled ? styles.disabled : "";
   };
@@ -35,6 +37,7 @@ export const Checkbox = ({
         disabled={disabled}
         onChange={() => {
           if (disabled) return;
+          setChecked(!checked);
           props.onChange();
         }}
         checked={checked}
