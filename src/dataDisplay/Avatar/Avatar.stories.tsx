@@ -1,6 +1,8 @@
 import { Meta, Story } from "@storybook/react";
-import { Avatar } from "./Avatar"
+import { Avatar } from "./Avatar";
 import * as React from "react";
+// import avatarIcon from "../../static/images/avatar/1.jpg"
+import avatarIcon from "../../static/images/avatar/1.jpg"
 
 export default {
   component: Avatar,
@@ -10,14 +12,12 @@ export default {
       control: { type: "select" },
     },
   },
-} as Meta
+} as Meta;
 
-export const MultiAvatar: Story = (args) => (
-  <Avatar {...args}></Avatar>
-);
+export const MultiAvatar: Story = (args) => <Avatar alt={""} src={""} {...args}></Avatar>;
 
 MultiAvatar.args = {
-  src: "",
-  alt: "",
+  src: avatarIcon,
+  alt: "Mexican Deathmask",
   size: "big",
-}
+};

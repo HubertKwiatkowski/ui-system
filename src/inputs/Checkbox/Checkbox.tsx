@@ -21,8 +21,7 @@ export const Checkbox = ({
   label = "label",
   ...props
 }: PropsWithChildren<CheckboxProps>) => {
-
-  const [checked, setChecked] = useState(false); 
+  const [checked, setChecked] = useState(false);
 
   const getIfDisabled = (): string => {
     return disabled ? styles.disabled : "";

@@ -6,7 +6,7 @@ import * as styles from "./Avatar.module.css";
 interface AvatarProps {
   src: string;
   alt: string;
-  size?: 'big' | 'medium' | 'small'
+  size?: "big" | "medium" | "small";
 }
 
 export const Avatar = ({
@@ -14,31 +14,34 @@ export const Avatar = ({
   alt = "",
   size = "big"
 }: PropsWithChildren<AvatarProps>) => {
-
   const variantClass = (): string => {
-    if (size==="big") {
-      return styles.avatarBig
-    } else if (size==="medium") {
-      return styles.avatarMedium
-    } else if (size==="small") {
-      return styles.avatarSmall
+    if (size === "big") {
+      return styles.avatarBig;
+    } else if (size === "medium") {
+      return styles.avatarMedium;
+    } else if (size === "small") {
+      return styles.avatarSmall;
     }
-  }
+  };
 
-  const getNoImageClass = 
-    src === "" ? styles.avatarEmpty : ""
+  const avatarClasses = [
+    variantClass(),
+    styles.templateAvatar, 
+  ].join(" ");
 
-  const dynamicClasses = [
-    styles.template,
-    getNoImageClass,
-    variantClass,
+  const defaultAvatarClasses = [
+    variantClass(),
+    styles.templateDefault,
   ].join(" ")
 
   return (
-    <img 
-      src={src} 
-      alt={alt}
-      className={dynamicClasses}
-    />
+    <div className={styles.avatarWrapper}>
+      {src 
+        ? <img src={src} alt={alt} className={avatarClasses}/>
+        : <div className={defaultAvatarClasses}>
+            <p >A</p>
+          </div>
+      }
+    </div>
   )
-}
+};

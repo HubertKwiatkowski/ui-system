@@ -9,9 +9,7 @@ export default {
 } as Meta;
 
 export const CheckboxField: Story = (args) => (
-  <Checkbox {...args}>
-    Checkbox label goes here
-  </Checkbox>
+  <Checkbox {...args}>Checkbox label goes here</Checkbox>
 );
 
 CheckboxField.args = {

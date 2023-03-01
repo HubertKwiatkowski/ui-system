@@ -39,7 +39,7 @@ test("should not be called when Button is disabled", () => {
 
 test("should have SVG spinner visible when Button is in loading state", () => {
   const handleClick = jest.fn();
-  
+
   const { getByTitle } = render(
     <Button icon={<Spinner />} isLoading onClick={handleClick}>
       Click me
