@@ -10,9 +10,8 @@ interface AvatarProps {
 }
 
 export const Avatar = ({
-  src = "",
-  alt = "",
-  size = "big"
+  size = "big",
+  ...props
 }: PropsWithChildren<AvatarProps>) => {
   const variantClass = (): string => {
     if (size === "big") {
@@ -36,10 +35,10 @@ export const Avatar = ({
 
   return (
     <div className={styles.avatarWrapper}>
-      {src 
-        ? <img src={src} alt={alt} className={avatarClasses}/>
+      {props.src 
+        ? <img src={props.src} alt={props.alt} className={avatarClasses}/>
         : <div className={defaultAvatarClasses}>
-            <p >A</p>
+            <p>A</p>
           </div>
       }
     </div>
