@@ -22,11 +22,7 @@ export default {
   },
 } as Meta;
 
-export const LinkElement: Story = (args) => (
-  <Link {...args}>
-    Link
-  </Link>
-);
+export const LinkElement: Story = (args) => <Link {...args}>Link</Link>;
 
 LinkElement.args = {
   to: "/",

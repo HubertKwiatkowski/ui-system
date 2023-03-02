@@ -16,8 +16,7 @@ export const Switch = ({
   id = "id",
   ...props
 }: PropsWithChildren<SwitchProps>) => {
-
-  const [checked, setChecked] = useState(false); 
+  const [checked, setChecked] = useState(false);
 
   const getIfDisabledLabel = (): string => {
     return disabled ? styles.switchLabelDisabled : "";
@@ -33,14 +32,14 @@ export const Switch = ({
 
   return (
     <label className={labelClasses}>
-      <input 
-        type="checkbox" 
+      <input
+        type="checkbox"
         checked={checked}
         disabled={disabled}
         onChange={() => {
           if (disabled) return;
           setChecked(!checked);
-          props.onChange()
+          props.onChange();
         }}
         id={id}
       />

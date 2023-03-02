@@ -7,9 +7,7 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const SwitchField: Story = (args) => (
-  <Switch {...args}></Switch>
-);
+export const SwitchField: Story = (args) => <Switch {...args}></Switch>;
 
 SwitchField.args = {
   checked: false,

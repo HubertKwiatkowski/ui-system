@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  height: 40px;
+  width: 40px;
+}
+
+.templateAvatar {
+  border-radius: 50%;
+}
+
+.templateDefault {
+  position: relative;
+  border-radius: 50%;
+  background-color: #23a094;
+}
+
+.templateDefault p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  margin: 0;
+}
+
+.avatarBig {
+  width: 40px;
+  height: 40px;
+}
+
+.avatarMedium {
+  width: 30px;
+  height: 32px;
+}
+
+.avatarSmall {
+  width: 24px;
+  height: 24px;
+}
