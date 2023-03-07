@@ -1,0 +1,37 @@
+.cardWrapper {
+  border: 1px black solid;
+  width: 270px;
+  height: 487px;
+}
+
+.cardWrapper:hover {
+  box-shadow: 4px 4px 0px #000000; 
+ 
+  /* filter: drop-shadow(4px 4px 0px #000000); */
+}
+
+img {
+  width: 270px;
+  height: 225px;
+}
+
+.fullWidth {
+  width: 370px;
+  height: 372px;
+}
+
+.fullWidth img {
+  width: 370px;
+  height: 200px;
+}
+
+
+
+.cardContent {
+  margin: 10px;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: row;
+}
