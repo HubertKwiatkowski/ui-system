@@ -1,6 +1,5 @@
 import { PropsWithChildren } from "react";
 import * as React from "react";
-import { Button } from "../../inputs";
 import imageUrl from "../../static/images/card/card.png";
 import * as styles from "./Card.module.css";
 
@@ -43,7 +42,6 @@ export const CardContent = ({
   //   ? styles.buttonWrapperFullWidth
   //   : "";
 
-
   const cardContentDynamicClasses = [
     styles.cardContent,
     // getIfFullWidhtCardContent,
@@ -60,9 +58,7 @@ export const CardContent = ({
         <h3>{header}</h3>
         <p>{para}</p>
       </div>
-      <div className={buttonWrapperDynamicClasses}>
-        {props.children}
-      </div>
+      <div className={buttonWrapperDynamicClasses}>{props.children}</div>
     </div>
   );
 };
