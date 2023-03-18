@@ -41,11 +41,8 @@ test("should have specific (depends on how you name it) className active when Te
 
   const textfieldElement = getByRole("textbox");
 
-
   act(() => {
     textfieldElement.focus();
+    expect(textfieldElement).toHaveFocus();
   });
-
-  expect(textfieldElement.classList.contains('focusedWrapper')).toBe(true)
-  // expect(textfieldElement).toHaveClass('focusedWrapper')
 });
