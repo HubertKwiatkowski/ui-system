@@ -13,10 +13,12 @@ export const MultiCard: Story = (args) => (
   <Card fullWidth={true} {...args}>
     <CardImage url={imageUrl} />
     <CardContent>
-      <Button variant={"primary"}>Click me</Button>
-      <Button variant={"primary"}>Click me</Button>
-      <Button variant={"secondary"}>Click me</Button>
-      <Button variant={"primary"}>Click me</Button>
+      <Button variant={"primary"}>Click!</Button>
+      <Button variant={"primary"}>Click him</Button>
+      <Button variant={"secondary"}>DO NOT CLICK ME!</Button>
+      <Button variant={"primary"}>
+        Noooooooooooooooo! Nooooooooooooooooo!
+      </Button>
     </CardContent>
   </Card>
 );

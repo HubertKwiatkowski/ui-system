@@ -7,58 +7,35 @@ interface CardProps {
   fullWidth?: boolean;
 }
 
-interface CardContentProps {
-  header: string;
-  para: string;
-}
-
 export const CardImage = () => {
-  return <img src={imageUrl} alt="" />;
+  return (
+    <div className={styles.imageWrapper}>
+      <img src={imageUrl} alt="placeholder" />
+    </div>
+  );
 };
 
-export const CardContent = ({
-  header = "Card Name",
-  para = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim harum\n" +
-    "          porro sunt nulla natus iusto necessitatibus debitis rem consequuntur\n" +
-    "          repellendus, illum quae. Tempora quis dolor sunt, earum, amet\n" +
-    "          repellat tenetur dicta porro ab voluptatum, animi ex aliquid\n" +
-    "          corporis quas quasi iusto in eos odit similique facere tempore\n" +
-    "          deserunt impedit exercitationem. Nesciunt deleniti perspiciatis\n" +
-    "          labore modi, neque distinctio pariatur quisquam officiis fugiat ut\n" +
-    "          voluptatem dolores assumenda facere molestiae omnis, ducimus error\n" +
-    "          animi eius praesentium doloremque possimus minus. Blanditiis\n" +
-    "          voluptates magnam sunt voluptatem enim hic reprehenderit, nam\n" +
-    "          obcaecati tenetur architecto recusandae sit libero, laboriosam nemo\n" +
-    "          iusto ad repellendus. In ad maiores id?",
-  ...props
-}: PropsWithChildren<CardContentProps>) => {
-  // const getIfFullWidthCard = fullWidth ? styles.fullWidth : "";
-  //
-  // const getIfFullWidhtCardContent = fullWidth
-  //   ? styles.fullWidthCardContent
-  //   : "";
-
-  // const getIfFullWidthButtonWrapper = fullWidth
-  //   ? styles.buttonWrapperFullWidth
-  //   : "";
-
-  const cardContentDynamicClasses = [
-    styles.cardContent,
-    // getIfFullWidhtCardContent,
-  ].join(" ");
-
-  const buttonWrapperDynamicClasses = [
-    styles.buttonWrapper,
-    // getIfFullWidthButtonWrapper,
-  ].join(" ");
-
+export const CardContent = (props: PropsWithChildren<never, never>) => {
   return (
-    <div className={cardContentDynamicClasses}>
+    <div className={styles.cardContent}>
       <div>
-        <h3>{header}</h3>
-        <p>{para}</p>
+        <h3>Card Name</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          architecto, autem distinctio dolorem, dolores, esse facere incidunt
+          odio officia quasi similique sunt totam unde ut veritatis. A, amet
+          aperiam architecto assumenda aut autem commodi consequatur deleniti
+          dolorem enim esse excepturi harum illum iure labore minus, modi
+          molestiae natus nesciunt non recusandae rem saepe sapiente sint
+          temporibus ut vero voluptate. Consequuntur ducimus eius et praesentium
+          recusandae. Dolore eaque eius eum excepturi expedita in ipsum laborum
+          maiores necessitatibus perspiciatis? Autem beatae, culpa delectus
+          dignissimos, dolorem doloremque eaque hic nemo nobis omnis possimus
+          quae sint, sit vel veniam! Dignissimos doloribus laudantium provident
+          veritatis.
+        </p>
       </div>
-      <div className={buttonWrapperDynamicClasses}>{props.children}</div>
+      <div className={styles.buttonWrapper}>{props.children}</div>
     </div>
   );
 };

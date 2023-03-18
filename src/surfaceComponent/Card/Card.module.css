@@ -3,26 +3,32 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Inter";
 }
 
 .cardWrapper {
   border: 1px black solid;
   width: 270px;
-  height: 487px;
 }
 
 .cardWrapper:hover {
   box-shadow: 4px 4px 0 #000000;
 }
 
+.imageWrapper {
+  overflow: hidden;
+}
+
 img {
+  position: center;
   width: 270px;
   height: 225px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .fullWidth {
   width: 370px;
-  height: 372px;
 }
 
 .fullWidth img {
@@ -36,7 +42,6 @@ img {
 }
 
 .cardContent h3 {
-  font-family: "Inter";
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
@@ -46,7 +51,6 @@ img {
 .cardContent p {
   position: relative;
   max-height: 70px;
-  font-family: "Inter";
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -75,12 +79,8 @@ img {
 
 .buttonWrapper {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 10px;
-}
-
-.buttonWrapper button {
-  width: 100%;
 }
 
 .buttonWrapperFullWidth {
