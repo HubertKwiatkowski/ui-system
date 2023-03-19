@@ -16,28 +16,7 @@ export const CardImage = () => {
 };
 
 export const CardContent = (props: PropsWithChildren<never, never>) => {
-  return (
-    <div className={styles.cardContent}>
-      <div>
-        <h3>Card Name</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-          architecto, autem distinctio dolorem, dolores, esse facere incidunt
-          odio officia quasi similique sunt totam unde ut veritatis. A, amet
-          aperiam architecto assumenda aut autem commodi consequatur deleniti
-          dolorem enim esse excepturi harum illum iure labore minus, modi
-          molestiae natus nesciunt non recusandae rem saepe sapiente sint
-          temporibus ut vero voluptate. Consequuntur ducimus eius et praesentium
-          recusandae. Dolore eaque eius eum excepturi expedita in ipsum laborum
-          maiores necessitatibus perspiciatis? Autem beatae, culpa delectus
-          dignissimos, dolorem doloremque eaque hic nemo nobis omnis possimus
-          quae sint, sit vel veniam! Dignissimos doloribus laudantium provident
-          veritatis.
-        </p>
-      </div>
-      <div className={styles.buttonWrapper}>{props.children}</div>
-    </div>
-  );
+  return <div className={styles.cardContent}>{props.children}</div>;
 };
 
 export const Card = ({

@@ -38,7 +38,10 @@ img {
 
 .cardContent {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
   margin: 16px;
+  gap: 10px;
 }
 
 .cardContent h3 {
@@ -75,12 +78,6 @@ img {
 .fullWidthCardContent p:after {
   bottom: -10px;
   height: 45px;
-}
-
-.buttonWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 
 .buttonWrapperFullWidth {
