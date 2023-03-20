@@ -15,7 +15,7 @@ export const CardImage = () => {
   );
 };
 
-export const CardContent = (props: PropsWithChildren<never, never>) => {
+export const CardContent = (props: PropsWithChildren<object>) => {
   return <div className={styles.cardContent}>{props.children}</div>;
 };
 
