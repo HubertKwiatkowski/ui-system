@@ -23,24 +23,21 @@ export const Avatar = ({
     }
   };
 
-  const avatarClasses = [
-    variantClass(),
-    styles.templateAvatar, 
-  ].join(" ");
+  const avatarClasses = [variantClass(), styles.templateAvatar].join(" ");
 
-  const defaultAvatarClasses = [
-    variantClass(),
-    styles.templateDefault,
-  ].join(" ")
+  const defaultAvatarClasses = [variantClass(), styles.templateDefault].join(
+    " "
+  );
 
   return (
     <div className={styles.avatarWrapper}>
-      {props.src 
-        ? <img src={props.src} alt={props.alt} className={avatarClasses}/>
-        : <div className={defaultAvatarClasses}>
-            <p>A</p>
-          </div>
-      }
+      {props.src ? (
+        <img src={props.src} alt={props.alt} className={avatarClasses} />
+      ) : (
+        <div className={defaultAvatarClasses}>
+          <p>A</p>
+        </div>
+      )}
     </div>
-  )
+  );
 };

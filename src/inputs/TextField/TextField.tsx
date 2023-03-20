@@ -17,6 +17,8 @@ interface TextFieldProps {
   id: string;
   onChange(): void;
   withIcon?: boolean;
+  onFocus?(event: React.ChangeEvent<HTMLInputElement>): void;
+  onBlur?(event: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -81,11 +83,19 @@ export const TextField = (props: TextFieldProps) => {
           disabled={props.disabled}
           value={props.value}
           type={props.type}
-          onFocus={() => setFocus(true)}
-          onBlur={() => setFocus(false)}
+          // onFocus={() => setFocus(true)}
+          // onBlur={() => setFocus(false)}
+          onFocus={(event) => {
+            setFocus(true);
+            props.onFocus && props.onFocus(event);
+          }}
+          onBlur={(event) => {
+            setFocus(false);
+            props.onBlur && props.onBlur(event);
+          }}
           className={inputDynamicClasses}
           onChange={() => {
-            if (disabled) return;
+            if (props.disabled) return;
             props.onChange();
           }}
         />
