@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+}
+
+.cardWrapper {
+  border: 1px black solid;
+  width: 270px;
+}
+
+.cardWrapper:hover {
+  box-shadow: 4px 4px 0 #000000;
+}
+
+.imageWrapper {
+  overflow: hidden;
+}
+
+img {
+  position: center;
+  width: 270px;
+  height: 225px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.fullWidth {
+  width: 370px;
+}
+
+.fullWidth img {
+  width: 370px;
+  height: 200px;
+}
+
+.cardContent {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 16px;
+  gap: 10px;
+}
+
+.cardContent h3 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+
+.cardContent p {
+  position: relative;
+  max-height: 70px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.cardContent p:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), #fff);
+}
+
+.fullWidthCardContent p {
+  max-height: 30px;
+}
+
+.fullWidthCardContent p:after {
+  bottom: -10px;
+  height: 45px;
+}
+
+.buttonWrapperFullWidth {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttonWrapperFullWidth button {
+  width: 164px;
+}
