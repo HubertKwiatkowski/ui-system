@@ -7,8 +7,6 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const BasePagination: Story = (args) => (
-  <Pagination />
-);
+export const BasePagination: Story = (args) => <Pagination />;
 
 BasePagination.args = {};

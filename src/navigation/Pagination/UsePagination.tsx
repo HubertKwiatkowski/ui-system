@@ -1,57 +1,51 @@
-import * as React from "react";
+// import * as React from "react";
 import { useMemo } from "react";
 
-export const DOTS = '...';
+export const DOTS = "...";
 
 const range = (start, end) => {
-  let length = end - start + 1;
+  const length = end - start + 1;
   return Array.from({ length }, (_, idx) => idx + start);
 };
 
-export const usePagination = ({
-  currentPage,
-  pageSize,
-  siblingCount = 1,
-  totalCount
-}) => {
+export const usePagination = ({ currentPage, maxPages }) => {
   const paginationRange = useMemo(() => {
-    const totalPageCount = Math.ceil(totalCount / pageSize );
-
+    const siblingCount = 1;
     const totalPageNumber = siblingCount + 5;
 
-    if (totalPageNumber >= totalPageCount) {
-      return range(1, totalPageCount);
+    if (totalPageNumber >= maxPages) {
+      return range(1, maxPages);
     }
 
     const leftSiblingIndex = Math.max(currentPage - siblingCount, 1);
-    const rightSiblingIndex = Math.min(currentPage + siblingCount, totalPageCount);
+    const rightSiblingIndex = Math.min(currentPage + siblingCount, maxPages);
 
     const shouldShowLeftDots = leftSiblingIndex > 2;
-    const shouldShowRightDots = rightSiblingIndex < totalPageCount - 2;
+    const shouldShowRightDots = rightSiblingIndex < maxPages - 2;
 
     const firstPageIndex = 1;
-    const lastPageIndex = totalPageCount;
+    const lastPageIndex = maxPages;
 
     if (!shouldShowLeftDots && shouldShowRightDots) {
       const leftItemCount = 3 + 2 * siblingCount;
       const leftRange = range(1, leftItemCount);
 
-      return [...leftRange, DOTS, lastPageIndex]
+      return [...leftRange, DOTS, lastPageIndex];
     }
 
     if (shouldShowLeftDots && shouldShowRightDots) {
-      const middleRange = range(leftSiblingIndex, rightSiblingIndex)
+      const middleRange = range(leftSiblingIndex, rightSiblingIndex);
 
-      return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex]
+      return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
     }
 
     if (shouldShowLeftDots && !shouldShowRightDots) {
       const rightItemCount = 3 + 2 * siblingCount;
-      const rightRange = range(totalPageCount - rightItemCount + 1, totalPageCount)
+      const rightRange = range(maxPages - rightItemCount + 1, maxPages);
 
-      return [firstPageIndex, DOTS, ...rightRange]
+      return [firstPageIndex, DOTS, ...rightRange];
     }
-  }, [currentPage, pageSize, siblingCount, totalCount]);
+  }, [currentPage, maxPages]);
 
   return paginationRange;
-}
+};
