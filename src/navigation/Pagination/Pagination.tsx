@@ -12,17 +12,33 @@ interface PaginationProps {
 }
 
 export const Pagination = ({
-  maxPages = 10,
-  currentPage = 1,
   ...props
 }: PropsWithChildren<PaginationProps>) => {
+  const currentPage = props.currentPage;
+  const maxPages = props.maxPages;
+
   const paginationRange = usePagination({
     currentPage,
     maxPages,
   });
 
-  const arrowLeft = "";
-  const arrowRight = "";
+  if (currentPage === 0 || paginationRange.length < 2) {
+    return null;
+  }
+
+  const paginationRangeLength = paginationRange.length;
+
+  const lastPage = paginationRange[paginationRangeLength - 1];
+
+  const leftIsDisabled = currentPage === 1 ? styles.disabled : "";
+  const rightIsDisabled = currentPage === lastPage ? styles.disabled : "";
+
+  const arrowLeft = [styles.baseIcon, styles.rightIcon, leftIsDisabled].join(
+    " "
+  );
+  const arrowRight = [styles.baseIcon, styles.rightIcon, rightIsDisabled].join(
+    " "
+  );
 
   const onNext = () => {
     props.onChange(currentPage + 1);
@@ -32,10 +48,11 @@ export const Pagination = ({
     props.onChange(currentPage - 1);
   };
 
+  // const isActive = []
+
   return (
     <ul>
       <li>
-        {/*  left arrow */}
         <div className={arrowLeft} onClick={onPrevious}>
           <ArrowLeft />
         </div>
@@ -52,7 +69,6 @@ export const Pagination = ({
         );
       })}
       <li>
-        {/* right arrow */}
         <div className={arrowRight} onClick={onNext}>
           <ArrowRight />
         </div>

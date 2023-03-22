@@ -27,7 +27,7 @@ export const usePagination = ({ currentPage, maxPages }) => {
     const lastPageIndex = maxPages;
 
     if (!shouldShowLeftDots && shouldShowRightDots) {
-      const leftItemCount = 3 + 2 * siblingCount;
+      const leftItemCount = 2 + 2 * siblingCount;
       const leftRange = range(1, leftItemCount);
 
       return [...leftRange, DOTS, lastPageIndex];
@@ -40,7 +40,7 @@ export const usePagination = ({ currentPage, maxPages }) => {
     }
 
     if (shouldShowLeftDots && !shouldShowRightDots) {
-      const rightItemCount = 3 + 2 * siblingCount;
+      const rightItemCount = 2 + 2 * siblingCount;
       const rightRange = range(maxPages - rightItemCount + 1, maxPages);
 
       return [firstPageIndex, DOTS, ...rightRange];
