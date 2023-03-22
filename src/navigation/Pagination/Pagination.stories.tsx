@@ -8,7 +8,7 @@ export default {
 } as Meta;
 
 export const BasePagination: Story = (args) => (
-  <Pagination count={10} page={page} onChange={handleChange} />
+  <Pagination />
 );
 
 BasePagination.args = {};
