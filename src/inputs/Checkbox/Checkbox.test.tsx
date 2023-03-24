@@ -46,5 +46,4 @@ test("should be in checked state, after clicking on it, and should be unchecked 
 
   fireEvent.click(checkboxElement);
   expect(checkboxElement).not.toBeChecked();
-  // expect(checkboxElement.checked).toEqual(false)
 });

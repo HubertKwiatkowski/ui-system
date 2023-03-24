@@ -83,8 +83,6 @@ export const TextField = (props: TextFieldProps) => {
           disabled={props.disabled}
           value={props.value}
           type={props.type}
-          // onFocus={() => setFocus(true)}
-          // onBlur={() => setFocus(false)}
           onFocus={(event) => {
             setFocus(true);
             props.onFocus && props.onFocus(event);
