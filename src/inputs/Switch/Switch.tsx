@@ -11,7 +11,6 @@ interface SwitchProps {
 }
 
 export const Switch = ({
-  // checked = false,
   disabled = false,
   id = "id",
   ...props
