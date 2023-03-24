@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 import * as React from "react";
 import { ArrowLeft, ArrowRight } from "../../icons";
 import { usePagination, DOTS } from "./UsePagination";
+import classnames from "classnames";
 
 import * as styles from "./Pagination.module.css";
 
@@ -22,7 +23,11 @@ export const Pagination = ({
     maxPages,
   });
 
-  if (currentPage === 0 || paginationRange.length < 2) {
+  if (
+    currentPage <= 0 ||
+    currentPage > maxPages ||
+    paginationRange.length < 2
+  ) {
     return null;
   }
 
@@ -33,43 +38,60 @@ export const Pagination = ({
   const leftIsDisabled = currentPage === 1 ? styles.disabled : "";
   const rightIsDisabled = currentPage === lastPage ? styles.disabled : "";
 
-  const arrowLeft = [styles.baseIcon, styles.rightIcon, leftIsDisabled].join(
+  const arrowLeft = [styles.baseIcon, styles.leftIcon, leftIsDisabled].join(
     " "
   );
   const arrowRight = [styles.baseIcon, styles.rightIcon, rightIsDisabled].join(
     " "
   );
 
+  const paginationItemNumber = [styles.paginationItem].join(" ");
+
+  const paginationItemDots = [styles.paginationItem, styles.dots].join(" ");
+
   const onNext = () => {
     props.onChange(currentPage + 1);
+    console.log(currentPage);
   };
 
   const onPrevious = () => {
     props.onChange(currentPage - 1);
+    console.log(currentPage);
   };
 
-  // const isActive = []
-
   return (
-    <ul>
+    <ul className={styles.mainWrapper}>
       <li>
-        <div className={arrowLeft} onClick={onPrevious}>
-          <ArrowLeft />
+        <div
+          className={classnames(arrowLeft, { disabled: currentPage === 1 })}
+          onClick={onPrevious}
+        >
+          {<ArrowLeft />}
         </div>
       </li>
       {paginationRange.map((pageNumber) => {
         if (pageNumber === DOTS) {
-          return <li key={pageNumber}>&#8230;</li>;
+          return <li key={pageNumber} className={paginationItemDots}>&#8230;</li>;
         }
-
         return (
-          <li key={pageNumber} onClick={() => props.onChange(pageNumber)}>
+          <li
+            key={pageNumber}
+            className={classnames(paginationItemNumber, {
+              selected: pageNumber === currentPage,
+            })}
+            onClick={() => props.onChange(pageNumber)}
+          >
             {pageNumber}
           </li>
         );
       })}
       <li>
-        <div className={arrowRight} onClick={onNext}>
+        <div
+          className={classnames(arrowRight, {
+            disabled: currentPage === lastPage,
+          })}
+          onClick={onNext}
+        >
           <ArrowRight />
         </div>
       </li>

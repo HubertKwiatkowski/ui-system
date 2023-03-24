@@ -9,6 +9,8 @@ export const ArrowRight = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
       fill="#1C1B1F"
     />
