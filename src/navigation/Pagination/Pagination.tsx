@@ -3,8 +3,11 @@ import * as React from "react";
 import { ArrowLeftButton } from "./ArrowLeftButton";
 import { ArrowRightButton } from "./ArrowRightButton";
 import { Ellipsis } from "./Ellipsis";
+import classNames from "classnames/bind";
 
 import * as styles from "./Pagination.module.css";
+
+const cx = classNames.bind(styles);
 
 interface PaginationProps {
   currentPage: number;
@@ -42,22 +45,34 @@ export const Pagination = ({
     console.log(currentPageIndex);
   };
 
+  const arrowLeftClass = cx({
+    disabledArrow: currentPageIndex === 1,
+  });
+
+  const arrowRightClass = cx({
+    disabledArrow: currentPageIndex === maxPages,
+  });
+
   return (
     <div className={styles.mainWrapper}>
-      <ArrowLeftButton
-        onClick={handlePrevClick}
-        disabled={currentPageIndex === 1}
-      />
+      <div className={arrowLeftClass}>
+        <ArrowLeftButton
+          onClick={handlePrevClick}
+          disabled={currentPageIndex === 1}
+        />
+      </div>
       <Ellipsis
         onClick={() => handleSetPage()}
         pageNumbers={pageNumbers}
         currentPage={currentPageIndex}
         setCurrentPage={setCurrentPageIndex}
       />
-      <ArrowRightButton
-        onClick={handleNextClick}
-        disabled={currentPageIndex === maxPages}
-      />
+      <div className={arrowRightClass}>
+        <ArrowRightButton
+          onClick={handleNextClick}
+          disabled={currentPageIndex === maxPages}
+        />
+      </div>
     </div>
   );
 };

@@ -14,3 +14,7 @@
   align-items: center;
   list-style: none;
 }
+
+.disabledArrow path {
+  fill: #e6e1e5;
+}

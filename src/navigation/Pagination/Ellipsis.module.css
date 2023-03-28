@@ -8,11 +8,12 @@
   margin-inline: 5px;
 }
 
-.btn:hover {
-  background: #c9c5ca;
-}
-
 .btn:disabled {
   background: #e6e1e5;
   color: black;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: #c9c5ca;
 }
