@@ -18,3 +18,7 @@
 .disabledArrow path {
   fill: #e6e1e5;
 }
+
+.disabledArrow button:hover {
+  cursor: default;
+}

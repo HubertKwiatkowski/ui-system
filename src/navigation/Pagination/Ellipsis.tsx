@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 
 import * as styles from "./Ellipsis.module.css";
 
