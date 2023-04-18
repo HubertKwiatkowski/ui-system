@@ -15,10 +15,61 @@
   list-style: none;
 }
 
+li {
+
+}
+
 .disabledArrow path {
   fill: #e6e1e5;
 }
 
 .disabledArrow button:hover {
   cursor: default;
+}
+
+.btn {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  list-style: none;
+  margin-inline: 5px;
+}
+
+.active {
+  background: #e6e1e5;
+  color: black;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: #c9c5ca;
+}
+
+.btnArrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  list-style: none;
+  margin-inline: 5px;
+}
+
+.btnArrow:hover {
+  cursor: pointer;
+}
+
+.btnArrow svg {
+  height: 16px;
+  width: 16px;
+  color: #1C1B1F,
+}
+
+.btnDisabled svg {
+  color: #E6E1E5,
 }

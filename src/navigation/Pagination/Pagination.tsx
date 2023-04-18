@@ -1,4 +1,10 @@
 import React from "react";
+import classNames from "classnames/bind";
+import { ArrowLeft, ArrowRight } from "../../icons";
+
+import * as styles from "./Pagination.module.css";
+
+const cx = classNames.bind(styles);
 
 interface PaginationItemProps {
   disabled?: boolean;
@@ -11,9 +17,17 @@ const PaginationItem: React.FC<PaginationItemProps> = ({
   onClick,
   children,
 }) => {
+  const arrowButtonClass = cx({
+    btnArrow: true,
+    btnDisabled: disabled,
+  });
   return (
-    <li className={`page-item ${disabled ? "disabled" : ""}`}>
-      <button className="page-link" onClick={onClick} disabled={disabled}>
+    <li>
+      <button
+        className={arrowButtonClass}
+        onClick={onClick}
+        disabled={disabled}
+      >
         {children}
       </button>
     </li>
@@ -31,9 +45,13 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
   onClick,
   children,
 }) => {
+  const paginationButtonClass = cx({
+    btn: true,
+    active: active,
+  });
   return (
-    <li className={`page-item ${active ? "active" : ""}`}>
-      <button className="page-link" onClick={onClick}>
+    <li>
+      <button className={paginationButtonClass} onClick={onClick}>
         {children}
       </button>
     </li>
@@ -58,13 +76,14 @@ export const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <nav>
-      <ul className="pagination">
+      <ul className={styles.mainWrapper}>
         <PaginationItem
           disabled={currentPage === 1}
           onClick={() => handlePageChange(currentPage - 1)}
         >
-          Previous
+          <ArrowLeft />
         </PaginationItem>
+
         {[...Array(maxPages)].map((_, i) => (
           <PaginationButton
             key={i + 1}
@@ -78,7 +97,7 @@ export const Pagination: React.FC<PaginationProps> = ({
           disabled={currentPage === maxPages}
           onClick={() => handlePageChange(currentPage + 1)}
         >
-          Next
+          <ArrowRight />
         </PaginationItem>
       </ul>
     </nav>
