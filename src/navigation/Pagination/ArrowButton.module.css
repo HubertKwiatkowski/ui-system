@@ -1,0 +1,21 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  list-style: none;
+  margin-inline: 5px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+svg {
+  height: 16px;
+  width: 16px;
+}

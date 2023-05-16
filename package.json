@@ -19,9 +19,7 @@
   "engines": {
     "node": ">=16.0.0 <17.0.0"
   },
-  "publishConfig": {
-    "registry": "http://139.59.154.199:4873"
-  },
+  "publishConfig": {},
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-react": "^7.18.6",
@@ -54,6 +52,7 @@
     "@mdx-js/react": "^2.3.0",
     "@storybook/react": "^6.5.16",
     "@testing-library/react": "^13.4.0",
+    "classnames": "^2.3.2",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "react": "^18.2.0",
