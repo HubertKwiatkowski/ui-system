@@ -1,16 +1,22 @@
 // Pagination.stories.tsx
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Pagination } from "./Pagination";
 import * as React from "react";
+import {useState} from "react";
 
 export default {
   component: Pagination,
-  argTypes: {},
 } as Meta;
 
-export const BasePagination: Story = (args) => <Pagination {...args} />;
-
-BasePagination.args = {
-  maxPages: 10,
-  currentPage: 1,
+export const Default: StoryFn = () => {
+  const [currentPage, setCurrentPage] = useState(5);
+  const handleChange = (page: number) => setCurrentPage(page);
+  
+  return (
+    <Pagination
+      maxPages={10}
+      currentPage={currentPage}
+      onChange={handleChange}
+    />
+  );
 };
