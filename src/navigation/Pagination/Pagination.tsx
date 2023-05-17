@@ -40,43 +40,35 @@ export const Pagination: React.FC<PaginationProps> = ({
   onChange,
 }) => {
   const [curPage, setCurPage] = useState<number>(currentPage);
-  
-  
+
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= maxPages) {
       onChange(page);
       setCurPage(page);
     }
   };
-  
+
   const renderPageNumbers = () => {
     const pageNumbers = [];
-    
+
     for (let i = 1; i <= maxPages; i++) {
-      if (
-        i === 1 ||
-        i === maxPages ||
-        (i >= curPage - 1 && i <= curPage + 1)
-      ) {
+      if (i === 1 || i === maxPages || (i >= curPage - 1 && i <= curPage + 1)) {
         pageNumbers.push(
           <div
-            className={`${styles.btn} ${
-              curPage === i && styles.active
-            }`}
+            className={`${styles.btn} ${curPage === i && styles.active}`}
             onClick={() => handlePageChange(i)}
           >
             <p>{i}</p>
-            
           </div>
         );
       } else if (i === curPage - 2 || i === curPage + 2) {
         pageNumbers.push(<div>...</div>);
       }
     }
-    
+
     return pageNumbers;
   };
-  
+
   return (
     <nav className={styles.mainWrapper}>
       <PaginationItem

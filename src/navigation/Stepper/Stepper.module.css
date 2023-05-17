@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
+.stepperWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 140px;
+  margin: 20px;
+}
+
+.stepWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  min-width: 140px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #aeaaae;
+  margin-inline: auto;
+}
+
+.stepperLine {
+  position: absolute;
+  top: 12px;
+  left: 110px;
+  width: 190px;
+  height: 2px;
+  background: #aeaaae;
+}
+
+.stepWrapper:last-child .stepperLine {
+  display: none;
+}
+
+.step div {
+  margin-inline: auto;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.stepCompleted,
+.stepActive {
+  background: #ff90e8;
+}
+
+.label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  max-width: 108px;
+  margin-inline: auto;
+}
+
+.step svg {
+  width: 11px;
+  height: 11px;
+  margin-inline: auto;
+}
