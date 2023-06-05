@@ -1,0 +1,35 @@
+.accordionWrapper {
+  font-family: "Inter";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 486px;
+  border: 1px solid #e6e1e5;
+  padding: 16px;
+}
+
+.accordionHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.accordionWrapper p {
+	margin-top: 16px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.hide {
+  display: none;
+}
